@@ -2,202 +2,774 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     <title>Weihao XUAN's Homepage</title>
-
     <meta name="author" content="Weihao Xuan">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/web_icons/web.png" type="images/web_icons/web.png">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-color: #0056b3;
+        --secondary-color: #17a2b8;
+        --accent-color: #f8f9fa;
+        --text-color: #343a40;
+        --light-text: #6c757d;
+        --border-color: #dee2e6;
+        --highlight-color: #ffc107;
+        --highlight-bg: rgba(255, 193, 7, 0.1);
+        --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Roboto', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #ffffff;
+        padding: 0;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        padding: 40px 0;
+        text-align: center;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+      }
+
+      @media (min-width: 768px) {
+        .profile-container {
+          flex-direction: row;
+          text-align: left;
+          justify-content: center;
+          gap: 40px;
+        }
+      }
+
+      .profile-image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .profile-image:hover {
+        transform: scale(1.03);
+      }
+
+      .profile-content {
+        max-width: 600px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+        justify-content: center;
+      }
+
+      @media (min-width: 768px) {
+        .social-links {
+          justify-content: flex-start;
+        }
+      }
+
+      .social-links a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .social-links a:hover {
+        color: var(--secondary-color);
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: var(--primary-color);
+        position: relative;
+      }
+
+      .section-title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary-color);
+        margin: 15px auto 0;
+      }
+
+      .paper-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      @media (min-width: 768px) {
+        .paper-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .paper-card {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: white;
+        box-shadow: var(--card-shadow);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .paper-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .paper-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .paper-content {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .paper-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+      }
+
+      .paper-authors {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        color: var(--light-text);
+      }
+
+      .paper-venue {
+        font-size: 0.9rem;
+        font-style: italic;
+        margin-bottom: 15px;
+      }
+
+      .paper-links {
+        margin-top: auto;
+        display: flex;
+        gap: 10px;
+      }
+
+      .paper-links a {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+        transition: background-color 0.2s, color 0.2s;
+      }
+
+      .paper-links a:hover {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .highlight {
+        display: inline-block;
+        background-color: var(--highlight-bg);
+        color: #d32f2f;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-left: 5px;
+      }
+
+      .activities {
+        background-color: var(--accent-color);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: var(--card-shadow);
+      }
+
+      .activities h3 {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+      }
+
+      .activities ul {
+        padding-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      .activities p {
+        padding-left: 20px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px 0;
+        background-color: var(--accent-color);
+        color: var(--light-text);
+        border-top: 1px solid var(--border-color);
+      }
+
+      footer p {
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+      }
+
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      a:hover {
+        color: var(--secondary-color);
+        text-decoration: underline;
+      }
+
+      .equal-co-author {
+        font-size: 0.85rem;
+        color: var(--light-text);
+        margin-top: 5px;
+      }
+
+      #about b {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      .pub-subcategory-title {
+        color: var(--secondary-color);
+        font-size: 1.3rem;
+        margin: 25px 0 15px 0;
+        position: relative;
+        padding-bottom: 8px;
+      }
+
+      .pub-subcategory-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--secondary-color);
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--primary-color);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        opacity: 0;
+        transition: opacity 0.3s, background-color 0.2s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+      }
+
+      .back-to-top:hover {
+        background-color: var(--secondary-color);
+      }
+
+      .nav-bar {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        transition: transform 0.3s;
+        padding: 10px 0;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: center;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        padding: 5px 0;
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary-color);
+        transition: width 0.3s;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* 出版物列表样式 */
+      .pub-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+
+      .pub-tab {
+        padding: 8px 15px;
+        background-color: white;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .pub-tab.active {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .pub-tab:hover {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      .pub-category {
+        margin-bottom: 40px;
+      }
+
+      .pub-category-title {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .pub-category-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--secondary-color);
+      }
+
+      .pub-list {
+        list-style-position: outside;
+        padding-left: 2em;
+      }
+
+      .pub-item {
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+
+      .pub-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .pub-authors {
+        margin-bottom: 5px;
+      }
+
+      .pub-title {
+        font-weight: 500;
+        color: var(--primary-color);
+        margin-bottom: 3px;
+      }
+
+      .pub-venue {
+        font-style: italic;
+        color: var(--light-text);
+        margin-bottom: 3px;
+      }
+
+      .pub-note {
+        font-size: 0.85rem;
+        color: var(--light-text);
+        margin-bottom: 3px;
+      }
+
+      .pub-badge {
+        display: inline-block;
+        background-color: var(--highlight-bg);
+        color: #d32f2f;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 5px;
+        margin-right: 5px;
+      }
+
+      .pub-links {
+        display: flex;
+        gap: 10px;
+        margin-top: 5px;
+      }
+
+      .pub-links a {
+        display: inline-block;
+        padding: 3px 8px;
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        border: 1px solid var(--border-color);
+        transition: all 0.2s;
+      }
+
+      .pub-links a:hover {
+        background-color: var(--primary-color);
+        color: white;
+        text-decoration: none;
+      }
+    </style>
   </head>
 
   <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Weihao XUAN (宣 偉豪)
-                </p>
-                <p>
-                    I'm a Ph.D. student at <a href="https://www.ms.k.u-tokyo.ac.jp/members.html">Machine Learning and Statistical Data Analysis Lab (杉山・横矢・石田研究室)</a>, <a href="https://www.u-tokyo.ac.jp/">The University of Tokyo (東京大学)</a>, where I'm very fortunate to be advised by Prof. <a href="https://naotoyokoya.com/">Naoto Yokoya</a>. I'm also under the Junior Research Associate (JRA) program at <a href="https://www.riken.jp/">RIKEN</a> <a href="https://aip.riken.jp/?lang=en">Center for Advanced Intelligence Project</a>.
-                </p>
-                <p>
-                    I obtained a master's degree in Computer Science from Waseda University.
-                    Prior to that, I received my bachelor's degree with First-Class Honours in Mechanical Engineering from the University of Leeds, United Kingdom.
+    <a href="#top" class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </a>
 
-                </p>
-                <p>
-                    My research focuses on <b>building robust visual foundation models for general computer vision tasks</b>, particularly in vision-language understanding and visual perception. I'm also passionate about <b>AI4Science</b>. I collaborate closely with <a href="https://scholar.google.co.jp/citations?user=CH-rTXsAAAAJ&hl=en">Heli Qi</a> and Dr. <a href="https://scholar.google.com.hk/citations?user=H58gKSAAAAAJ&hl=en">Junjue Wang</a> (UTokyo).
-                </p>
-<!--                 <p>
-                    I am open to potential collaborations and discussions. Please do not hesitate to contact me should you have any proposals or questions.
-                </p> -->
-                <p style="text-align:center">
-                  <a href="mailto:weihaoxuanfoo@gmail.com">Email</a> &nbsp;/&nbsp;
-<!--                  <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=7e0W-2AAAAAJ">Google Scholar</a> &nbsp;/&nbsp;-->
-                  <a href="https://github.com/weihao1115">Github</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:20%;max-width:20%">
-                <a href="images/personal/Weihao.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/personal/Weihao.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-<section class="max-w-4xl mx-auto px-4 py-16">
-  <div class="space-y-8">
-    <div class="text-center">
-      <h2 class="text-3xl font-bold mb-6">Selected Publications</h2>
-<!--       <div class="max-w-2xl mx-auto">
-        <p class="text-lg leading-relaxed">
-          My research interests lie in the field of <span class="font-semibold">Generative AI</span>.
-        </p>
-      </div> -->
-    </div>
-  </div>
-</section>
+    <nav class="nav-bar" id="navbar">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#activities">Activities</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <table class="paper-container"><tbody>
-          <br>
-
-
-          <tr>
-            <td class="paper-item-img">
-              <img src="images/papers/synrs3d.png" alt="clean-usnob" width="200" height="100">
-            </td>
-            <td width="75%" valign="middle">
-              <p style="line-height: 1.8em;">
-              <papertitle>SynRS3D: A Synthetic Dataset for Global 3D Semantic Understanding from Monocular Remote Sensing Imagery</papertitle>
-              <br>
-              Jian Song, Hongruixuan Chen, <strong>Weihao Xuan</strong>, Junshi Xia, Naoto Yokoya.
-              <br>
-              <em>Advances in Neural Information Processing Systems (<b>NeurIPS</b>), 2024. <font color="red">Spotlight Paper [Top 3.1%]</font></em>
-              <br>
-
-              [<a href="https://arxiv.org/abs/2406.18151",  target="_blank">paper</a>] [<a href="https://github.com/JTRNEO/SynRS3D",  target="_blank">github</a>]
+    <header id="top">
+      <div class="container">
+        <div class="profile-container">
+          <img class="profile-image" src="images/personal/Weihao.jpg" alt="Weihao XUAN">
+          <div class="profile-content">
+            <h1>Weihao XUAN (宣 偉豪)</h1>
+            <p>
+              I'm a Ph.D. student at <a href="https://www.ms.k.u-tokyo.ac.jp/members.html">Machine Learning and Statistical Data Analysis Lab (杉山・横矢・石田研究室)</a>, <a href="https://www.u-tokyo.ac.jp/">The University of Tokyo (東京大学)</a>, where I'm very fortunate to be advised by Prof. <a href="https://naotoyokoya.com/">Naoto Yokoya</a>. I'm also under the Junior Research Associate (JRA) program at <a href="https://www.riken.jp/">RIKEN</a> <a href="https://aip.riken.jp/?lang=en">Center for Advanced Intelligence Project</a>.
             </p>
-            </td>
-          </tr>
-
-
-        <tr>
-            <td class="paper-item-img">
-              <img src="images/papers/mm_sam.png" alt="clean-usnob" width="200" height="100">
-            </td>
-            <td width="75%" valign="middle">
-              <p style="line-height: 1.8em;">
-              <papertitle>Segment Anything with Multiple Modalities</papertitle>
-              <br>
-              Aoran Xiao*, <strong>Weihao Xuan*</strong>, Heli Qi, Yun Xing, Shijian Lu^, Naoto Yokoya^. (* indicates co-first authors with equal contributions  ^ indicates corresponding authors)
-              <br>
-              <em>arXiv, 2024.</em>
-              <br>
-
-              [<a href="https://arxiv.org/abs/2408.09085.pdf",  target="_blank">paper</a>] [<a href="https://github.com/weihao1115/mm-sam",  target="_blank">github</a>]
+            <p>
+              I obtained a master's degree in Computer Science from Waseda University.
+              Prior to that, I received my bachelor's degree with First-Class Honours in Mechanical Engineering from the University of Leeds, United Kingdom.
             </p>
-            </td>
-          </tr>
 
+            <div id="about">
+              <p>
+                My research focuses on <b>general visual and language understanding</b>, particularly in LLMs and VLMs. I'm also passionate about <b>AI4Science (Earth Observation & Medical)</b>.
+                I collaborate closely with <a href="https://scholar.google.co.jp/citations?user=CH-rTXsAAAAJ&hl=en">Heli Qi</a> and <a href="https://scholar.google.com.hk/citations?user=H58gKSAAAAAJ&hl=en">Junjue Wang</a> (UTokyo).
+              </p>
+            </div>
 
-        <tr>
-            <td class="paper-item-img">
-              <img src="images/papers/CAT-SAM.png" alt="clean-usnob" width="200" height="100">
-            </td>
-            <td width="75%" valign="middle">
-              <p style="line-height: 1.8em;">
-              <papertitle>CAT-SAM: Conditional Tuning for Few-Shot Adaptation of Segment Anything Model</papertitle>
-              <br>
-              Aoran Xiao*, <strong>Weihao Xuan*</strong>, Heli Qi, Yun Xing, Ruijie Ren, Xiaoqin Zhang, Ling Shao, Shijian Lu. (* indicates co-first authors with equal contributions)
-              <br>
-              <em>European Conference on Computer Vision (<b>ECCV</b>), 2024. <font color="red">Oral Paper [Top 2.3%, 200/8585]</font></em>
-              <br>
+            <div class="social-links">
+              <a href="mailto:weihaoxuanfoo@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+              <a href="https://github.com/weihao1115"><i class="fab fa-github"></i> Github</a>
+              <a href="https://scholar.google.com/citations?hl=en&user=7e0W-2AAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-              [<a href="https://arxiv.org/abs/2402.03631.pdf",  target="_blank">paper</a>] [<a href="https://github.com/weihao1115/cat-sam",  target="_blank">github</a>]
-            </p>
-            </td>
-          </tr>
+    <section id="publications">
+      <div class="container">
+        <h2 class="section-title">Publications</h2>
 
-          <tr>
-            <td class="paper-item-img">
-              <img src="images/papers/3dss.png" alt="clean-usnob" width="200" height="100">
-            </td>
-            <td width="75%" valign="middle">
-              <p style="line-height: 1.8em;">
-              <papertitle>3D Semantic Segmentation in the Wild: Learning Generalized Models for Adverse-Condition Point Clouds</papertitle>
-              <br>
-              Aoran Xiao, Jiaxing Huang, <strong>Weihao Xuan</strong>, Ruijie Ren, Kangcheng Liu, Dayan Guan, Abdulmotaleb El Saddik, Shijian Lu, Eric Xing.
-              <br>
-              <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2023.</em>
-              <br>
-              [<a href="https://arxiv.org/abs/2304.00690",  target="_blank">paper</a>] [<a href="https://github.com/xiaoaoran/SemanticSTF",  target="_blank">github</a>]
-            </p>
-            </td>
-          </tr>
+        <div class="publications-container">
+          <div class="pub-category" id="publications">
 
+            <h3 class="pub-category-title">Preprints</h3>
+            <ol class="pub-list">
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-authors"><strong>Xuan, W.</strong>, Yang, R., Qi, H., Zeng, Q., Xiao, Y., Xing, Y., Wang, J., Li, H., Li, X., Yu, K., Liu, N., Chen, Q., Teodoro, D., Marrese-Taylor, E., Lu, S., Iwasawa, Y., Matsuo, Y., & Li, I. (2025).</span>
+                  <span class="pub-title">MMLU-ProX: A multilingual benchmark for advanced large language model evaluation.</span>
+                  <span class="pub-venue">arXiv preprint arXiv:2503.10497.</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2503.10497" target="_blank">Paper</a>
+                    <a href="https://huggingface.co/datasets/li-lab/MMLU-ProX" target="_blank">Dataset</a>
+                    <a href="https://mmluprox.github.io/" target="_blank">Project</a>
+                  </div>
+                </div>
+              </li>
 
-        <tr>
-                <td class="paper-item-img">
-                  <img src="images/papers/cdc22.png" alt="clean-usnob" width="200" height="100">
-                </td>
-                <td width="75%" valign="middle">
-                  <p style="line-height: 1.8em;">
-                  <papertitle>On a Discrete-Time Network SIS Model with Opinion Dynamics</papertitle>
-                  <br>
-                      Yixuan Lin, <strong>Weihao Xuan</strong>, Ruijie Ren, Ji Liu.
-                  <br>
-                  <em>IEEE Conference on Decision and Control (<b>CDC</b>), 2021.</em>
-                  <br>
-                  [<a href="https://ieeexplore.ieee.org/abstract/document/9683347",  target="_blank">paper</a>]
-                </p>
-                </td>
-              </tr>
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-authors">Chen, H., Song, J., Dietrich, O., Broni-Bediako, C., <strong>Xuan, W.</strong>, Wang, J., Shao, X., Wei, Y., Xia, J., Lan, C., Schindler, K., & Yokoya, N. (2025).</span>
+                  <span class="pub-title">BRIGHT: A globally distributed multimodal building damage assessment dataset with very-high-resolution for all-weather disaster response.</span>
+                  <span class="pub-venue">arXiv preprint arXiv:2501.06019.</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2501.06019" target="_blank">Paper</a>
+                  </div>
+                </div>
+              </li>
 
-        <tr>
-                <td class="paper-item-img">
-                  <img src="images/papers/ifac20.png" alt="clean-usnob" width="200" height="100">
-                </td>
-                <td width="75%" valign="middle">
-                  <p style="line-height: 1.8em;">
-                  <papertitle>On a network SIS model with opinion dynamics</papertitle>
-                  <br>
-                      <strong>Weihao Xuan</strong>, Ruijie Ren, Philip E Paré, Mengbin Ye, Sebastian Ruf, Ji Liu.
-                  <br>
-                  <em>IFAC World Congress, 2020.</em>
-                  <br>
-                  [<a href="https://www.sciencedirect.com/science/article/pii/S2405896320305863",  target="_blank">paper</a>]
-                </p>
-                </td>
-              </tr>
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-authors">Ning, C., Gan, W., <strong>Xuan, W.</strong>, & Yokoya, N. (2025).</span>
+                  <span class="pub-title">Is pre-training applicable to the decoder for dense prediction?</span>
+                  <span class="pub-venue">arXiv preprint arXiv:2503.07637.</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2503.07637" target="_blank">Paper</a>
+                  </div>
+                </div>
+              </li>
 
-</tbody></table>
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-authors">Xiao, A., <strong>Xuan, W.</strong>, Wang, J., Huang, J., Tao, D., Lu, S., & Yokoya, N. (2024).</span>
+                  <span class="pub-title">Foundation models for remote sensing and Earth Observation: A survey.</span>
+                  <span class="pub-venue">arXiv preprint arXiv:2410.16602.</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2410.16602" target="_blank">Paper</a>
+                  </div>
+                </div>
+              </li>
 
-          <heading>Miscellaneous</heading>
-        <br><br>
-        <table class="news" width="100%" align="center" border="0" cellpadding="0"><tbody>
-          <tr>
-            <td width="100%" valign="center">
-              <subheading>Professional Activities</subheading>
-              <ul style="height: auto;">
-                <li>Reviews:</li>
-              </ul>
-              <p style="padding-left: 6%; line-height: 1.5em;">International Federation of Automatic Control (IFAC).<br>
-              IEEE Robotics and Automation Society (RAS).<br>
-            </td>
-          </tr>
-        </tbody></table>
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-authors">Xiao, A.*, <strong>Xuan, W.*</strong>, Qi, H., Xing, Y., Yokoya, N., & Lu, S. (2024).</span>
+                  <span class="pub-title">Segment anything with multiple modalities.</span>
+                  <span class="pub-venue">arXiv preprint arXiv:2408.09085.</span>
+                  <span class="pub-note">* indicates co-first authors</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2408.09085.pdf" target="_blank">Paper</a>
+                    <a href="https://github.com/weihao1115/mm-sam" target="_blank">Code</a>
+                  </div>
+                </div>
+              </li>
+            </ol>
 
+            <h3 class="pub-category-title">Conference Papers</h3>
+            <ol class="pub-list">
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-authors">Song, J., Chen, H., <strong>Xuan, W.</strong>, Xia, J., & Yokoya, N. (2024).</span>
+                  <span class="pub-title">SynRS3D: A synthetic dataset for global 3D semantic understanding from monocular remote sensing imagery.</span>
+                  <span class="pub-venue">In The Thirty-eight Conference on Neural Information Processing Systems (NeurIPS 2024).</span>
+                  <span class="pub-badge">Spotlight Paper [Top 3.1%]</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2406.18151" target="_blank">Paper</a>
+                    <a href="https://github.com/JTRNEO/SynRS3D" target="_blank">Code</a>
+                  </div>
+                </div>
+              </li>
 
-          <footer>
-          <p style="text-align:center">Weihao Xuan | Last updated: Aug 2024</p>
-          <p style="text-align:center;font-size:small;">
-            Template adapted from <a style="font-size:small;" href="https://jonbarron.info", target="_blank">Jon Barron</a>.
-          </a></p>
-        </footer>
-        </td>
-      </tr>
-    </table>
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-authors">Xiao, A.*, <strong>Xuan, W.*</strong>, Qi, H., Xing, Y., Ren, R., Zhang, X., Shao, L. & Lu, S. (2024).</span>
+                  <span class="pub-title">Cat-sam: Conditional tuning for few-shot adaptation of segment anything model.</span>
+                  <span class="pub-venue">In European Conference on Computer Vision (ECCV 2024) (pp. 189-206).</span>
+                  <span class="pub-note">* indicates co-first authors</span>
+                  <span class="pub-badge">Oral Paper [Top 2.3%, 200/8585]</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2402.03631.pdf" target="_blank">Paper</a>
+                    <a href="https://github.com/weihao1115/cat-sam" target="_blank">Code</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-authors">Xiao, A., Huang, J., <strong>Xuan, W.</strong>, Ren, R., Liu, K., Guan, D., El Saddik, A., Lu, S., & Xing, E. P. (2023).</span>
+                  <span class="pub-title">3D semantic segmentation in the wild: Learning generalized models for adverse-condition point clouds.</span>
+                  <span class="pub-venue">In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2023) (pp. 9382-9392).</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2304.00690" target="_blank">Paper</a>
+                    <a href="https://github.com/xiaoaoran/SemanticSTF" target="_blank">Code</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-authors"><strong>Xuan, W.</strong>, Ren, R., Wu, S., & Chen, C. (2022).</span>
+                  <span class="pub-title">Maskvo: Self-supervised visual odometry with a learnable dynamic mask.</span>
+                  <span class="pub-venue">In 2022 IEEE/SICE International Symposium on System Integration (SII) (pp. 225-231). IEEE.</span>
+                  <div class="pub-links">
+                    <a href="#" target="_blank">Paper</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-authors">Lin, Y., <strong>Xuan, W.</strong>, Ren, R., & Liu, J. (2021).</span>
+                  <span class="pub-title">On a discrete-time network SIS model with opinion dynamics.</span>
+                  <span class="pub-venue">In 2021 60th IEEE Conference on Decision and Control (CDC) (pp. 2098-2103). IEEE.</span>
+                  <div class="pub-links">
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9683347" target="_blank">Paper</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-authors"><strong>Xuan, W.</strong>, Ren, R., Paré, P. E., Ye, M., Ruf, S., & Liu, J. (2020).</span>
+                  <span class="pub-title">On a network SIS model with opinion dynamics.</span>
+                  <span class="pub-venue">IFAC-PapersOnLine, 53(2), 2582-2587.</span>
+                  <div class="pub-links">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S2405896320305863" target="_blank">Paper</a>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="activities">
+      <div class="container">
+        <h2 class="section-title">Professional Activities</h2>
+        <div class="activities">
+          <h3>Reviews</h3>
+          <p>
+            <strong>Conference:</strong> CVPR (2024, 2025), NeurIPS (2025), ICCV (2025), ICCVW (2025), ACMMM (2025), IROS (2025), ICDL (2023), SII (2023), CPHS (2020)<br>
+            <strong>Journal:</strong> Pattern Recognition, ISPRS Journal of Photogrammetry and Remote Sensing, IEEE Transactions on Geoscience and Remote Sensing
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>Weihao Xuan | Last updated: May 2025</p>
+      </div>
+    </footer>
+
+    <script>
+      // Back to top button functionality
+      const backToTopButton = document.getElementById('backToTop');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+
+      // Navbar hide on scroll down, show on scroll up
+      let lastScrollY = window.scrollY;
+      const navbar = document.getElementById('navbar');
+
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY) {
+          // Scrolling down
+          navbar.style.transform = 'translateY(-100%)';
+        } else {
+          // Scrolling up
+          navbar.style.transform = 'translateY(0)';
+        }
+
+        lastScrollY = currentScrollY;
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+    </script>
   </body>
 </html>
