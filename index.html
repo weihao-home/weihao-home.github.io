@@ -68,8 +68,9 @@
 
       .profile-container {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         gap: 40px;
+        margin-top: 20px;
       }
 
       @media (max-width: 768px) {
@@ -82,13 +83,19 @@
       }
 
       .profile-image {
-        width: 200px;
-        height: 200px;
-        border-radius: 8px;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
         object-fit: cover;
-        border: 1px solid var(--border-color);
-        box-shadow: var(--shadow);
+        border: 3px solid var(--background-color);
+        box-shadow: var(--shadow-hover);
         flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+
+      .profile-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
       }
 
       .profile-content {
@@ -146,8 +153,6 @@
         background-color: var(--background-color);
         border-bottom: 1px solid var(--border-color);
         padding: 15px 0;
-        position: sticky;
-        top: 0;
         z-index: 100;
       }
 
