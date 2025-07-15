@@ -103,11 +103,21 @@
       }
 
       h1 {
-        font-family: 'Source Serif Pro', serif;
+        font-family: 'Source Serif Pro', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'STHeiti', 'SimHei', serif;
         font-size: 2.2em;
         font-weight: 700;
         margin-bottom: 15px;
         color: var(--primary-color);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        perspective: 1000;
       }
 
       .profile-content p {
@@ -178,11 +188,7 @@
       }
 
       section {
-        padding: 50px 0;
-      }
-
-      section:nth-child(even) {
-        background: linear-gradient(135deg, var(--section-bg) 0%, #ffffff 100%);
+        padding: 25px 0;
       }
 
       .section-title {
@@ -288,6 +294,11 @@
         display: block;
       }
 
+      .pub-cofirst-note {
+        color: var(--text-muted);
+        font-size: 0.9em;
+      }
+
       .pub-badge {
         display: block;
         background-color: var(--accent-color);
@@ -329,47 +340,61 @@
         border-color: var(--accent-color);
       }
 
-      .activities {
-        background: linear-gradient(135deg, var(--background-color) 0%, var(--subtle-bg) 100%);
-        padding: 30px;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        position: relative;
-        overflow: hidden;
+      .activities-content {
+        /* No special styling - matches education section */
       }
 
-      .activities::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
-      }
-
-      .activities h3 {
+      .activities-content h3 {
         color: var(--primary-color);
         margin-bottom: 15px;
         font-size: 1.3em;
         font-weight: 600;
       }
 
-      .activities p {
+      .activities-content p {
         line-height: 1.7;
         margin-bottom: 15px;
       }
 
-      .activities strong {
+      .activities-content strong {
+        color: var(--primary-color);
+      }
+
+      .funding-content p {
+        margin-bottom: 15px;
+        line-height: 1.7;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .funding-content strong {
+        color: var(--primary-color);
+      }
+
+      .funding-date {
+        color: var(--text-light);
+        font-size: 0.9em;
+        flex-shrink: 0;
+        margin-left: 20px;
+      }
+
+      .education-content p {
+        margin-bottom: 15px;
+        line-height: 1.7;
+      }
+
+      .education-content strong {
         color: var(--primary-color);
       }
 
       footer {
-        background-color: var(--primary-color);
-        color: white;
+        background-color: var(--section-bg);
+        color: var(--text-muted);
         text-align: center;
         padding: 30px 0;
         margin-top: 50px;
+        border-top: 1px solid var(--border-color);
       }
 
       footer p {
@@ -449,15 +474,15 @@
         }
         
         section {
-          padding: 30px 0;
+          padding: 20px 0;
         }
         
         .pub-item {
           padding: 15px;
         }
         
-        .activities {
-          padding: 20px;
+        .activities-content {
+          /* No special mobile styling needed */
         }
       }
     </style>
@@ -477,15 +502,11 @@
             <p>
               I'm a Ph.D. student at <a href="https://www.ms.k.u-tokyo.ac.jp/members.html">Machine Learning and Statistical Data Analysis Lab (杉山・横矢・石田研究室)</a>, <a href="https://www.u-tokyo.ac.jp/">The University of Tokyo (東京大学)</a>, where I'm very fortunate to be advised by Prof. <a href="https://naotoyokoya.com/">Naoto Yokoya</a>. I'm also under the Junior Research Associate (JRA) program at <a href="https://www.riken.jp/">RIKEN</a> <a href="https://aip.riken.jp/?lang=en">Center for Advanced Intelligence Project</a>.
             </p>
-            <p>
-              I obtained a master's degree in Computer Science from Waseda University.
-              Prior to that, I received my bachelor's degree with First-Class Honours in Mechanical Engineering from the University of Leeds, United Kingdom.
-            </p>
 
             <div id="about">
               <p>
                 My research focuses on <b>natural language understanding</b>, particularly in post-training for LLMs and VLMs. I'm also passionate about <b>AI4Science (Earth Observation & Medical)</b> .
-                I collaborate very closely with my friends <a href="https://scholar.google.co.jp/citations?user=CH-rTXsAAAAJ&hl=en">Heli Qi</a> and <a href="https://scholar.google.com.hk/citations?user=H58gKSAAAAAJ&hl=en">Junjue Wang</a> (UTokyo), as well as several friends in LLM from the United States, Singapore and Japan.
+                I collaborate very closely with my friends <a href="https://scholar.google.co.jp/citations?user=CH-rTXsAAAAJ&hl=en">Heli Qi</a> and <a href="https://scholar.google.com.hk/citations?user=H58gKSAAAAAJ&hl=en">Junjue Wang</a>, as well as several friends in LLM from the United States, Singapore and Japan.
               </p>
             </div>
 
@@ -503,7 +524,9 @@
       <div class="container">
         <ul class="nav-links">
           <li><a href="#publications">Publications</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#activities">Activities</a></li>
+          <li><a href="#funding">Funding & Awards</a></li>
         </ul>
       </div>
     </nav>
@@ -517,10 +540,11 @@
 
             <h3 class="pub-category-title">Preprints</h3>
             <ol class="pub-list">
+
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">Seeing Is Believing, But How Much? A Comprehensive Analysis of Verbalized Calibration in Vision-Language Models</span>
-                  <span class="pub-authors"><strong>Weihao Xuan*</strong>, Qingcheng Zeng*, Heli Qi, Junjue Wang, & Naoto Yokoya. (* indicates co-first authors)</span>
+                  <span class="pub-authors"><strong>Weihao Xuan*</strong>, Qingcheng Zeng*, Heli Qi, Junjue Wang, & Naoto Yokoya† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
                   <span class="pub-venue">arXiv preprint arXiv:2505.20236.</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2505.20236" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -531,7 +555,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">MMLU-ProX: A Multilingual Benchmark for Advanced Large Language Model Evaluation</span>
-                  <span class="pub-authors"><strong>Weihao Xuan</strong>, Rui Yang, Heli Qi, Qingcheng Zeng, Yunze Xiao, Aosong Feng, Dairui Liu, Yun Xing, Junjue Wang, Fan Gao, Jinghui Lu, Yuang Jiang, Huitao Li, Xin Li, Kunyu Yu, Ruihai Dong, Shangding Gu, Yuekang Li, Xiaofei Xie, Felix Juefei-Xu, Foutse Khomh, Osamu Yoshie, Qingyu Chen, Douglas Teodoro, Nan Liu, Randy Goebel, Lei Ma, Edison Marrese-Taylor, Shijian Lu, Yusuke Iwasawa, Yutaka Matsuo, & Irene Li.</span>
+                  <span class="pub-authors"><strong>Weihao Xuan†</strong>, Rui Yang, Heli Qi, Qingcheng Zeng, Yunze Xiao, Aosong Feng, Dairui Liu, Yun Xing, Junjue Wang, Fan Gao, Jinghui Lu, Yuang Jiang, Huitao Li, Xin Li, Kunyu Yu, Ruihai Dong, Shangding Gu, Yuekang Li, Xiaofei Xie, Felix Juefei-Xu, Foutse Khomh, Osamu Yoshie, Qingyu Chen, Douglas Teodoro, Nan Liu, Randy Goebel, Lei Ma, Edison Marrese-Taylor, Shijian Lu, Yusuke Iwasawa, Yutaka Matsuo, & Irene Li†</span>
                   <span class="pub-venue">arXiv preprint arXiv:2503.10497.</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2503.10497" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -544,7 +568,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">DynamicVL: Benchmarking Multimodal Large Language Models for Dynamic City Understanding</span>
-                  <span class="pub-authors"><strong>Weihao Xuan*</strong>, Junjue Wang*, Heli Qi, Zihang Chen, Zhuo Zheng, Yanfei Zhong, Junshi Xia, & Naoto Yokoya. (* indicates co-first authors)</span>
+                  <span class="pub-authors"><strong>Weihao Xuan*</strong>, Junjue Wang*, Heli Qi, Zihang Chen, Zhuo Zheng, Yanfei Zhong, Junshi Xia, & Naoto Yokoya† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
                   <span class="pub-venue">arXiv preprint arXiv:2505.21076.</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2505.21076" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -555,7 +579,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">DisasterM3: A Remote Sensing Vision-Language Dataset for Disaster Damage Assessment and Response</span>
-                  <span class="pub-authors">Junjue Wang*, <strong>Weihao Xuan*</strong>, Heli Qi, Zhihao Liu, Kunyi Liu, Yuhan Wu, Hongruixuan Chen, Jian Song, Junshi Xia, Zhuo Zheng, & Naoto Yokoya. (* indicates co-first authors)</span>
+                  <span class="pub-authors">Junjue Wang*, <strong>Weihao Xuan*</strong>, Heli Qi, Zhihao Liu, Kunyi Liu, Yuhan Wu, Hongruixuan Chen, Jian Song, Junshi Xia, Zhuo Zheng, & Naoto Yokoya† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
                   <span class="pub-venue">arXiv preprint arXiv:2505.21089.</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2505.21089" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -566,7 +590,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">Thinking Out Loud: Do Reasoning Models Know When They're Right?</span>
-                  <span class="pub-authors">Qingcheng Zeng*, <strong>Weihao Xuan*</strong>, Leyang Cui, & Rob Voigt. (* indicates co-first authors)</span>
+                  <span class="pub-authors">Qingcheng Zeng*, <strong>Weihao Xuan*</strong>, Leyang Cui, & Rob Voigt† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
                   <span class="pub-venue">arXiv preprint arXiv:2504.06564.</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2504.06564" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -574,22 +598,10 @@
                 </div>
               </li>
 
-<!--              <li class="pub-item">-->
-<!--                <div class="pub-content">-->
-<!--                  <span class="pub-authors">Zeng, Q.*, <strong>Xuan, W.*</strong>, Cui, L., & Voigt, R. (2024).</span>-->
-<!--                  <span class="pub-title">Thinking Out Loud: Do Reasoning Models Know When They're Right?</span>-->
-<!--                  <span class="pub-venue">arXiv preprint arXiv:2504.06564.</span>-->
-<!--                  <span class="pub-note">* indicates co-first authors</span>-->
-<!--                  <div class="pub-links">-->
-<!--                    <a href="https://arxiv.org/pdf/2504.06564" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </li>-->
-
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">BRIGHT: A Globally Distributed Multimodal Building Damage Assessment Dataset With Very-High-Resolution for All-Weather Disaster Response</span>
-                  <span class="pub-authors">Hongruixuan Chen, Jian Song, Olivier Dietrich, Clifford Broni-Bediako, <strong>Weihao Xuan</strong>, Junjue Wang, Xinlei Shao, Yimin Wei, Junshi Xia, Cuiling Lan, Konrad Schindler, & Naoto Yokoya.</span>
+                  <span class="pub-authors">Hongruixuan Chen, Jian Song, Olivier Dietrich, Clifford Broni-Bediako, <strong>Weihao Xuan</strong>, Junjue Wang, Xinlei Shao, Yimin Wei, Junshi Xia, Cuiling Lan, Konrad Schindler, & Naoto Yokoya†</span>
                   <span class="pub-venue">arXiv preprint arXiv:2501.06019.</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2501.06019" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -600,7 +612,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">Is Pre-Training Applicable to the Decoder for Dense Prediction</span>
-                  <span class="pub-authors">Chao Ning, Wanshui Gan, <strong>Weihao Xuan</strong>, & Naoto Yokoya.</span>
+                  <span class="pub-authors">Chao Ning, Wanshui Gan, <strong>Weihao Xuan</strong>, & Naoto Yokoya†</span>
                   <span class="pub-venue">arXiv preprint arXiv:2503.07637.</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2503.07637" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -612,7 +624,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">Segment Anything With Multiple Modalities</span>
-                  <span class="pub-authors">Aoran Xiao*, <strong>Weihao Xuan*</strong>, Heli Qi, Yun Xing, Naoto Yokoya, & Shijian Lu. (* indicates co-first authors)</span>
+                  <span class="pub-authors">Aoran Xiao*, <strong>Weihao Xuan*</strong>, Heli Qi, Yun Xing, Naoto Yokoya, & Shijian Lu† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
                   <span class="pub-venue">arXiv preprint arXiv:2408.09085.</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2408.09085" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -627,7 +639,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">LR2Depth: Large-Region Aggregation at Low Resolution for Efficient Monocular Depth Estimation</span>
-                  <span class="pub-authors">Chao Ning, <strong>Weihao Xuan</strong>, Wanshui Gan, & Naoto Yokoya.</span>
+                  <span class="pub-authors">Chao Ning, <strong>Weihao Xuan</strong>, Wanshui Gan, & Naoto Yokoya†</span>
                   <span class="pub-venue">In IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025). Accepted.</span>
                   <div class="pub-links">
                     <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -639,7 +651,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">SynRS3D: A Synthetic Dataset for Global 3D Semantic Understanding From Monocular Remote Sensing Imagery</span>
-                  <span class="pub-authors">Jian Song, Hongruixuan Chen, <strong>Weihao Xuan</strong>, Junshi Xia, & Naoto Yokoya.</span>
+                  <span class="pub-authors">Jian Song, Hongruixuan Chen, <strong>Weihao Xuan</strong>, Junshi Xia, & Naoto Yokoya†</span>
                   <span class="pub-venue">In The Thirty-eight Conference on Neural Information Processing Systems (NeurIPS 2024).</span>
                   <span class="pub-badge">Spotlight Paper [Top 3.1%]</span>
                   <div class="pub-links">
@@ -652,7 +664,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">Cat-SAM: Conditional Tuning for Few-Shot Adaptation of Segment Anything Model</span>
-                  <span class="pub-authors">Aoran Xiao*, <strong>Weihao Xuan*</strong>, Heli Qi, Yun Xing, Ruijie Ren, Xiaoqin Zhang, Ling Shao & Shijian Lu. (* indicates co-first authors)</span>
+                  <span class="pub-authors">Aoran Xiao*, <strong>Weihao Xuan*</strong>, Heli Qi, Yun Xing, Ruijie Ren, Xiaoqin Zhang, Ling Shao & Shijian Lu† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
                   <span class="pub-venue">In European Conference on Computer Vision (ECCV 2024) (pp. 189-206).</span>
                   <span class="pub-badge">Oral Paper [Top 2.3%, 200/8585]</span>
                   <div class="pub-links">
@@ -665,7 +677,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">3D Semantic Segmentation in the Wild: Learning Generalized Models for Adverse-Condition Point Clouds</span>
-                  <span class="pub-authors">Aoran Xiao, Jiaxing Huang, <strong>Weihao Xuan</strong>, Ruijie Ren, Kangcheng Liu, Dayan Guan, Abdulmotaleb El Saddik, Shijian Lu, & Eric Xing.</span>
+                  <span class="pub-authors">Aoran Xiao, Jiaxing Huang, <strong>Weihao Xuan</strong>, Ruijie Ren, Kangcheng Liu, Dayan Guan, Abdulmotaleb El Saddik, Shijian Lu†, & Eric Xing</span>
                   <span class="pub-venue">In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2023) (pp. 9382-9392).</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2304.00690" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -677,7 +689,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">MaskVO: Self-Supervised Visual Odometry With a Learnable Dynamic Mask</span>
-                  <span class="pub-authors"><strong>Weihao Xuan</strong>, Ruijie Ren, Siyuan Wu, & Changhao Chen.</span>
+                  <span class="pub-authors"><strong>Weihao Xuan</strong>, Ruijie Ren, Siyuan Wu, & Changhao Chen</span>
                   <span class="pub-venue">In 2022 IEEE/SICE International Symposium on System Integration (SII) (pp. 225-231). IEEE.</span>
                   <div class="pub-links">
                     <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -688,7 +700,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">On a Discrete-Time Network SIS Model With Opinion Dynamics</span>
-                  <span class="pub-authors">Yixuan Lin, <strong>Weihao Xuan</strong>, Ruijie Ren, & Ji Liu.</span>
+                  <span class="pub-authors">Yixuan Lin, <strong>Weihao Xuan</strong>, Ruijie Ren, & Ji Liu†</span>
                   <span class="pub-venue">In 2021 60th IEEE Conference on Decision and Control (CDC) (pp. 2098-2103). IEEE.</span>
                   <div class="pub-links">
                     <a href="https://ieeexplore.ieee.org/abstract/document/9683347" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -699,7 +711,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">On a Network SIS Model With Opinion Dynamics</span>
-                  <span class="pub-authors"><strong>Weihao Xuan</strong>, Ruijie Ren, Philip E. Paré, Mengbin Ye, Sebastian Ruf, & Ji Liu.</span>
+                  <span class="pub-authors"><strong>Weihao Xuan</strong>, Ruijie Ren, Philip E. Paré, Mengbin Ye, Sebastian Ruf, & Ji Liu†</span>
                   <span class="pub-venue">IFAC-PapersOnLine, 53(2), 2582-2587.</span>
                   <div class="pub-links">
                     <a href="https://www.sciencedirect.com/science/article/pii/S2405896320305863" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -713,7 +725,7 @@
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">Foundation Models for Remote Sensing and Earth Observation: A Survey</span>
-                  <span class="pub-authors">Aoran Xiao, <strong>Weihao Xuan</strong>, Junjue Wang, Jiaxing Huang, Dacheng Tao, Shijian Lu, & Naoto Yokoya.</span>
+                  <span class="pub-authors">Aoran Xiao, <strong>Weihao Xuan</strong>, Junjue Wang, Jiaxing Huang, Dacheng Tao, Shijian Lu†, & Naoto Yokoya†</span>
                   <span class="pub-venue">IEEE Geoscience and Remote Sensing Magazine. Accepted.</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2410.16602" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
@@ -726,15 +738,62 @@
       </div>
     </section>
 
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-content">
+          <p><strong>The University of Tokyo (東京大学)</strong><br>
+          Ph.D. in Complexity Science and Engineering<br>
+          <a href="https://www.ms.k.u-tokyo.ac.jp/members.html">Machine Learning and Statistical Data Analysis Lab (杉山・横矢・石田研究室)</a>, Advisor: Prof. <a href="https://naotoyokoya.com/">Naoto Yokoya</a><br>
+          Junior Research Associate (JRA) program at <a href="https://www.riken.jp/">RIKEN</a> <a href="https://aip.riken.jp/?lang=en">Center for Advanced Intelligence Project</a></p>
+
+          <p><strong>Waseda University (早稲田大学)</strong><br>
+          M.Eng. in Computer Science<br>
+          Okuma Memorial Scholarship (Top Student)</p>
+
+          <p><strong>University of Leeds</strong><br>
+          B.Eng. in Mechanical Engineering<br>
+          First-Class Honours</p>
+        </div>
+      </div>
+    </section>
+
     <section id="activities">
       <div class="container">
         <h2 class="section-title">Professional Activities</h2>
-        <div class="activities">
-          <h3>Reviews</h3>
+        <div class="activities-content">
+          <h3>Reviewer</h3>
           <p>
-            <strong>Conference:</strong> NeurIPS, CVPR, ICCV, ICCVW, ACMMM, IROS, ICDL, SII, CPHS<br>
-            <strong>Journal:</strong> Pattern Recognition, ISPRS Journal of Photogrammetry and Remote Sensing, IEEE Transactions on Geoscience and Remote Sensing
+            <strong>Conference:</strong> <em>NeurIPS</em>, <em>CVPR</em>, <em>ICCV</em>, <em>ICCVW</em>, <em>ACMMM</em>, <em>IROS</em>, <em>ICDL</em>, <em>SII</em>, <em>CPHS</em><br>
+            <strong>Journal:</strong> <em>Pattern Recognition</em>, <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, <em>IEEE Transactions on Geoscience and Remote Sensing</em>
           </p>
+
+          <h3>Organization</h3>
+          <p>
+            <strong>Session Co-Chair:</strong> ER3: System Integration, <em>IEEE/SICE International Symposium on System Integration</em> (SII 2022)
+          </p>
+
+          <h3>Editorial Board</h3>
+          <p>
+            <strong>Guest Editor Assistant:</strong> Special Issue: Advancement of Multi-Source Remote Sensing Data Fusion in Environmental Monitoring, <em>Remote Sensing</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="funding">
+      <div class="container">
+        <h2 class="section-title">Funding and Awards</h2>
+        <div class="funding-content">
+<!--          <p><strong>JHPCN Joint Usage and Research Funding</strong><span class="funding-date">Mar 2025</span></p>-->
+
+          <p><strong>NVIDIA Academic Grant</strong><span class="funding-date">Dec 2024</span></p>
+
+          <p><strong>RIKEN Junior Research Associate</strong><span class="funding-date">Dec 2023</span></p>
+
+          <p><strong>Okuma Memorial Scholarship (Top Student)</strong><span class="funding-date">Dec 2022</span></p>
+
+          <p><strong>Monbukagakusho Honors Scholarship, JASSO</strong><span class="funding-date">Apr 2022</span></p>
         </div>
       </div>
     </section>
