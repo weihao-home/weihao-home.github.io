@@ -369,6 +369,19 @@
         margin-left: 20px;
       }
 
+      .news-content {
+        /* No special styling - matches activities section */
+      }
+
+      .news-content p {
+        line-height: 1.7;
+        margin-bottom: 15px;
+      }
+
+      .news-content strong {
+        color: var(--primary-color);
+      }
+
       .education-content p {
         margin-bottom: 15px;
         line-height: 1.7;
@@ -513,6 +526,7 @@
     <nav>
       <div class="container">
         <ul class="nav-links">
+          <li><a href="#news">News</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#activities">Activities</a></li>
@@ -520,6 +534,17 @@
         </ul>
       </div>
     </nav>
+
+    <section id="news">
+      <div class="container">
+        <h2 class="section-title">News</h2>
+        <div class="news-content">
+          <p><strong>[08/2025]</strong> Three papers accepted by EMNLP 2025 Main.</p>
+          <p><strong>[06/2025]</strong> One paper accepted by IROS 2025.</p>
+          <p><strong>[09/2024]</strong> One paper accepted by NeurIPS 2024 and selected as <strong>Spotlight Paper</strong>.</p>
+        </div>
+      </div>
+    </section>
 
     <section id="publications">
       <div class="container">
@@ -546,7 +571,7 @@
                 <div class="pub-content">
                   <span class="pub-title">Seeing Is Believing, But How Much? A Comprehensive Analysis of Verbalized Calibration in Vision-Language Models</span>
                   <span class="pub-authors"><strong>Weihao Xuan*</strong>, Qingcheng Zeng*, Heli Qi, Junjue Wang, & Naoto Yokoya† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
-                  <span class="pub-venue">arXiv preprint arXiv:2505.20236.</span>
+                  <span class="pub-venue">In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025 Main).</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2505.20236" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                   </div>
@@ -557,11 +582,22 @@
                 <div class="pub-content">
                   <span class="pub-title">MMLU-ProX: A Multilingual Benchmark for Advanced Large Language Model Evaluation</span>
                   <span class="pub-authors"><strong>Weihao Xuan†</strong>, Rui Yang, Heli Qi, Qingcheng Zeng, Yunze Xiao, Aosong Feng, Dairui Liu, Yun Xing, Junjue Wang, Fan Gao, Jinghui Lu, Yuang Jiang, Huitao Li, Xin Li, Kunyu Yu, Ruihai Dong, Shangding Gu, Yuekang Li, Xiaofei Xie, Felix Juefei-Xu, Foutse Khomh, Osamu Yoshie, Qingyu Chen, Douglas Teodoro, Nan Liu, Randy Goebel, Lei Ma, Edison Marrese-Taylor, Shijian Lu, Yusuke Iwasawa, Yutaka Matsuo, & Irene Li†</span>
-                  <span class="pub-venue">arXiv preprint arXiv:2503.10497.</span>
+                  <span class="pub-venue">In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025 Main).</span>
                   <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2503.10497" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                     <a href="https://huggingface.co/datasets/li-lab/MMLU-ProX" target="_blank"><i class="fas fa-database"></i> Dataset</a>
                     <a href="https://mmluprox.github.io/" target="_blank"><i class="fas fa-globe"></i> Project</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-title">Thinking Out Loud: Do Reasoning Models Know When They're Right?</span>
+                  <span class="pub-authors">Qingcheng Zeng*, <strong>Weihao Xuan*</strong>, Leyang Cui, & Rob Voigt† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
+                  <span class="pub-venue">In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025 Main).</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2504.06564" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                   </div>
                 </div>
               </li>
@@ -588,16 +624,6 @@
                 </div>
               </li>
 
-              <li class="pub-item">
-                <div class="pub-content">
-                  <span class="pub-title">Thinking Out Loud: Do Reasoning Models Know When They're Right?</span>
-                  <span class="pub-authors">Qingcheng Zeng*, <strong>Weihao Xuan*</strong>, Leyang Cui, & Rob Voigt† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
-                  <span class="pub-venue">arXiv preprint arXiv:2504.06564.</span>
-                  <div class="pub-links">
-                    <a href="https://arxiv.org/pdf/2504.06564" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-                  </div>
-                </div>
-              </li>
 
               <li class="pub-item">
                 <div class="pub-content">
@@ -614,9 +640,9 @@
                 <div class="pub-content">
                   <span class="pub-title">VeriGUI: Verifiable Long-Chain GUI Dataset</span>
                   <span class="pub-authors">Shunyu Liu, Minghao Liu, Huichi Zhou, Zhenyu Cui, Yang Zhou, Yuhao Zhou, Wendong Fan, Ge Zhang, Jiajun Shi, <strong>Weihao Xuan</strong>, Jiaxing Huang, Shuang Luo, Fang Wu, Heli Qi, Qingcheng Zeng, Ziqi Ren, Jialiang Gao, Jindi Lv, Junjie Wang, Aosong Feng, Heng Zhou, Wangchunshu Zhou, Zhenfei Yin, Wenlong Zhang, Guohao Li, Wenhao Yu, Irene Li, Lei Ma, Lei Bai, Qunshu Lin, Mingli Song†, & Dacheng Tao†</span>
-                  <span class="pub-venue">arXiv preprint.</span>
+                  <span class="pub-venue">arXiv preprint arXiv:2508.04026.</span>
                   <div class="pub-links">
-                    <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://arxiv.org/pdf/2508.04026" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                     <a href="https://huggingface.co/datasets/2077AIDataFoundation/VeriGUI" target="_blank"><i class="fas fa-database"></i> Dataset</a>
                     <a href="https://github.com/VeriGUI-Team/VeriGUI" target="_blank"><i class="fab fa-github"></i> Code</a>
                   </div>
