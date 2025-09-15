@@ -382,6 +382,39 @@
         color: var(--primary-color);
       }
 
+      .news-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        background-color: var(--background-color);
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 14px;
+        margin-top: 15px;
+      }
+
+      .news-toggle:hover {
+        background-color: var(--hover-color);
+        border-color: var(--accent-color);
+        box-shadow: var(--shadow);
+      }
+
+      .news-collapsible {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .news-collapsible.expanded {
+        max-height: 500px;
+      }
+
       .education-content p {
         margin-bottom: 15px;
         line-height: 1.7;
@@ -538,11 +571,18 @@
     <section id="news">
       <div class="container">
         <h2 class="section-title">News</h2>
-        <div class="news-content">
+        <div class="news-content" id="newsContainer">
           <p><strong>[08/2025]</strong> Three papers were accepted by EMNLP 2025 Main Conference, one selected as an <strong>Oral Paper</strong> (Full Meta Score 10/10).</p>
           <p><strong>[06/2025]</strong> One paper was accepted by IROS 2025.</p>
           <p><strong>[09/2024]</strong> One paper was accepted by NeurIPS 2024 and selected as a <strong>Spotlight Paper</strong>.</p>
           <p><strong>[08/2024]</strong> One paper was accepted by ECCV 2024 and selected as an <strong>Oral Paper</strong>.</p>
+          <p><strong>[02/2023]</strong> One paper was accepted by CVPR 2023.</p>
+          <div class="news-collapsible" id="newsCollapsible">
+          </div>
+          <button class="news-toggle" id="newsToggle" style="display: none;">
+            <i class="fas fa-chevron-down" id="newsToggleIcon"></i>
+            <span id="newsToggleText">Show More</span>
+          </button>
         </div>
       </div>
     </section>
@@ -884,6 +924,45 @@
           backToTopButton.classList.remove('visible');
         }
       });
+
+      // Auto-organize news items and toggle functionality
+      const newsContainer = document.getElementById('newsContainer');
+      const newsToggle = document.getElementById('newsToggle');
+      const newsCollapsible = document.getElementById('newsCollapsible');
+      const newsToggleIcon = document.getElementById('newsToggleIcon');
+      const newsToggleText = document.getElementById('newsToggleText');
+
+      // Auto-organize news items
+      if (newsContainer && newsCollapsible && newsToggle) {
+        const newsItems = Array.from(newsContainer.querySelectorAll('p'));
+        const maxVisible = 4;
+
+        if (newsItems.length > maxVisible) {
+          // Move items beyond the 4th to collapsible section
+          const itemsToMove = newsItems.slice(maxVisible);
+          itemsToMove.forEach(item => {
+            newsCollapsible.appendChild(item);
+          });
+
+          // Show the toggle button
+          newsToggle.style.display = 'inline-flex';
+        }
+
+        // Toggle functionality
+        newsToggle.addEventListener('click', () => {
+          const isExpanded = newsCollapsible.classList.contains('expanded');
+
+          if (isExpanded) {
+            newsCollapsible.classList.remove('expanded');
+            newsToggleIcon.className = 'fas fa-chevron-down';
+            newsToggleText.textContent = 'Show More';
+          } else {
+            newsCollapsible.classList.add('expanded');
+            newsToggleIcon.className = 'fas fa-chevron-up';
+            newsToggleText.textContent = 'Show Less';
+          }
+        });
+      }
 
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
