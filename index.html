@@ -549,6 +549,28 @@
         color: var(--primary-color);
       }
 
+      .news-content strong a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: all 0.2s ease;
+      }
+
+      .news-content strong a i {
+        transition: all 0.2s ease;
+      }
+
+      .news-content strong a:hover {
+        color: var(--accent-color);
+        border-bottom-color: var(--accent-color);
+        text-decoration: none;
+      }
+
+      .news-content strong a:hover i {
+        opacity: 1;
+        transform: translateX(2px);
+      }
+
       .news-toggle {
         display: inline-flex;
         align-items: center;
@@ -821,10 +843,10 @@
       <div class="container">
         <h2 class="section-title">News</h2>
         <div class="news-content" id="newsContainer">
-          <p><strong>[08/2025]</strong> Three papers accepted to EMNLP 2025 Main Conference, with one selected as an <strong>Oral Paper</strong> (Full Meta Score 10/10).</p>
+          <p><strong>[08/2025]</strong> Three papers accepted to EMNLP 2025 Main Conference, with one selected as an <strong><a href="#emnlp2025-oral">Oral Paper <i class="fas fa-link" style="font-size: 0.8em; opacity: 0.7;"></i></a></strong> (Full Meta Score 10/10).</p>
           <p><strong>[06/2025]</strong> One paper accepted to IROS 2025.</p>
-          <p><strong>[09/2024]</strong> One paper accepted to NeurIPS 2024 as a <strong>Spotlight Paper</strong>.</p>
-          <p><strong>[08/2024]</strong> One paper accepted to ECCV 2024 as an <strong>Oral Paper</strong>.</p>
+          <p><strong>[09/2024]</strong> One paper accepted to NeurIPS 2024 as a <strong><a href="#neurips2024-spotlight">Spotlight Paper <i class="fas fa-link" style="font-size: 0.8em; opacity: 0.7;"></i></a></strong>.</p>
+          <p><strong>[08/2024]</strong> One paper accepted to ECCV 2024 as an <strong><a href="#eccv2024-oral">Oral Paper <i class="fas fa-link" style="font-size: 0.8em; opacity: 0.7;"></i></a></strong>.</p>
           <p><strong>[02/2023]</strong> One paper accepted to CVPR 2023.</p>
           <div class="news-collapsible" id="newsCollapsible">
           </div>
@@ -957,7 +979,7 @@
 
             <h3 class="pub-category-title">Conference Papers</h3>
             <ol class="pub-list">
-              <li class="pub-item featured">
+              <li class="pub-item featured" id="emnlp2025-oral">
                 <div class="pub-content">
                   <span class="pub-title">Seeing Is Believing, But How Much? A Comprehensive Analysis of Verbalized Calibration in Vision-Language Models</span>
                   <span class="pub-authors"><strong>Weihao Xuan*</strong>, Qingcheng Zeng*, Heli Qi, Junjue Wang, & Naoto Yokoya† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
@@ -1005,7 +1027,7 @@
                 </div>
               </li>
 
-              <li class="pub-item featured">
+              <li class="pub-item featured" id="neurips2024-spotlight">
                 <div class="pub-content">
                   <span class="pub-title">SynRS3D: A Synthetic Dataset for Global 3D Semantic Understanding From Monocular Remote Sensing Imagery</span>
                   <span class="pub-authors">Jian Song, Hongruixuan Chen, <strong>Weihao Xuan</strong>, Junshi Xia, & Naoto Yokoya†</span>
@@ -1019,9 +1041,9 @@
                 </div>
               </li>
 
-              <li class="pub-item featured">
+              <li class="pub-item featured" id="eccv2024-oral">
                 <div class="pub-content">
-                  <span class="pub-title">Cat-SAM: Conditional Tuning for Few-Shot Adaptation of Segment Anything Model</span>
+                  <span class="pub-title">CAT-SAM: Conditional Tuning for Few-Shot Adaptation of Segment Anything Model</span>
                   <span class="pub-authors">Aoran Xiao*, <strong>Weihao Xuan*</strong>, Heli Qi, Yun Xing, Ruijie Ren, Xiaoqin Zhang, Ling Shao & Shijian Lu† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
                   <span class="pub-venue">In European Conference on Computer Vision (ECCV 2024) (pp. 189-206).</span>
                   <span class="pub-badge">Oral Paper [Top 2.3%, 200/8585]</span>
