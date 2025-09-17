@@ -14,18 +14,19 @@
       :root {
         --primary-color: #2c3e50;
         --secondary-color: #34495e;
-        --accent-color: #3498db;
+        --accent-color: #2980b9;
         --text-color: #2c3e50;
-        --text-light: #7f8c8d;
+        --text-light: #6c757d;
         --text-muted: #95a5a6;
         --background-color: #ffffff;
         --section-bg: #f8f9fa;
-        --border-color: #ecf0f1;
-        --hover-color: #e8f4f8;
-        --shadow: 0 2px 4px rgba(0,0,0,0.1);
-        --shadow-hover: 0 4px 8px rgba(0,0,0,0.15);
+        --border-color: #e9ecef;
+        --hover-color: #e3f2fd;
+        --shadow: 0 1px 3px rgba(0,0,0,0.08);
+        --shadow-hover: 0 4px 12px rgba(0,0,0,0.12);
         --light-accent: #ecf0f1;
-        --subtle-bg: #fdfdfd;
+        --subtle-bg: #fafbfc;
+        --highlight-bg: #f0f8ff;
       }
 
       * {
@@ -117,7 +118,7 @@
 
       .social-links {
         display: flex;
-        gap: 15px;
+        gap: 8px;
         margin-top: 20px;
         flex-wrap: wrap;
       }
@@ -131,22 +132,51 @@
       .social-links a {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        padding: 8px 16px;
-        background-color: var(--background-color);
+        gap: 5px;
+        padding: 6px 12px;
+        background-color: var(--section-bg);
         border: 1px solid var(--border-color);
-        border-radius: 4px;
-        color: var(--accent-color);
+        border-radius: 20px;
+        color: var(--text-color);
         text-decoration: none;
         font-weight: 500;
-        transition: all 0.2s ease;
-        font-size: 14px;
+        transition: all 0.25s ease;
+        font-size: 13px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .social-links a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(41, 128, 185, 0.05), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .social-links a:hover::before {
+        left: 100%;
       }
 
       .social-links a:hover {
-        background-color: var(--hover-color);
+        background-color: var(--background-color);
         border-color: var(--accent-color);
-        box-shadow: var(--shadow);
+        color: var(--accent-color);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(41, 128, 185, 0.15);
+      }
+
+      .social-links a i {
+        font-size: 12px;
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+      }
+
+      .social-links a:hover i {
+        opacity: 1;
       }
 
       nav {
@@ -178,7 +208,19 @@
       }
 
       section {
-        padding: 25px 0;
+        padding: 30px 0;
+        position: relative;
+      }
+
+      section:not(:last-of-type)::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--border-color), transparent);
       }
 
       .section-title {
@@ -219,13 +261,19 @@
 
       .pub-item {
         margin-bottom: 15px;
-        padding: 15px;
-        background: linear-gradient(135deg, var(--background-color) 0%, var(--subtle-bg) 100%);
+        padding: 16px;
+        background: var(--background-color);
         border: 1px solid var(--border-color);
-        border-radius: 6px;
-        transition: all 0.3s ease;
+        border-radius: 8px;
+        transition: all 0.25s ease;
         position: relative;
         overflow: hidden;
+      }
+
+      .pub-item:hover {
+        border-color: var(--accent-color);
+        box-shadow: var(--shadow-hover);
+        background: var(--highlight-bg);
       }
 
       .pub-item::before {
@@ -240,14 +288,19 @@
         transition: opacity 0.3s ease;
       }
 
-      .pub-item:hover {
-        box-shadow: var(--shadow-hover);
-        border-color: var(--accent-color);
-        transform: translateY(-2px);
-      }
-
       .pub-item:hover::before {
         opacity: 1;
+      }
+
+      .pub-item.featured {
+        border: 1px solid rgba(41, 128, 185, 0.2);
+        background: linear-gradient(135deg, var(--background-color) 0%, rgba(240, 248, 255, 0.3) 100%);
+        box-shadow: 0 1px 4px rgba(41, 128, 185, 0.08);
+      }
+
+      .pub-item.featured:hover {
+        border-color: rgba(41, 128, 185, 0.4);
+        background: rgba(240, 248, 255, 0.5);
       }
 
       .pub-authors {
@@ -294,16 +347,17 @@
       }
 
       .pub-badge {
-        display: block;
-        background-color: var(--accent-color);
+        display: inline-block;
+        background: linear-gradient(135deg, var(--accent-color), #1e88e5);
         color: white;
-        padding: 2px 6px;
-        border-radius: 3px;
+        padding: 3px 8px;
+        border-radius: 12px;
         font-size: 0.75em;
         font-weight: 600;
-        margin-bottom: 5px;
+        margin-bottom: 6px;
         margin-right: 8px;
         width: fit-content;
+        box-shadow: 0 1px 3px rgba(41, 128, 185, 0.3);
       }
 
       .pub-links {
@@ -316,13 +370,13 @@
       .pub-links a {
         display: inline-flex;
         align-items: center;
-        gap: 3px;
-        padding: 3px 8px;
+        gap: 4px;
+        padding: 4px 10px;
         background-color: var(--section-bg);
         border: 1px solid var(--border-color);
         color: var(--accent-color);
         text-decoration: none;
-        border-radius: 3px;
+        border-radius: 6px;
         font-size: 0.8em;
         font-weight: 500;
         transition: all 0.2s ease;
@@ -332,6 +386,8 @@
         background-color: var(--accent-color);
         color: white;
         border-color: var(--accent-color);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(41, 128, 185, 0.2);
       }
 
       .activities-content {
@@ -389,24 +445,29 @@
       .news-toggle {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        padding: 8px 16px;
-        background-color: var(--background-color);
-        border: 1px solid var(--border-color);
-        border-radius: 4px;
-        color: var(--accent-color);
+        gap: 4px;
+        padding: 4px 0;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid transparent;
+        color: var(--text-muted);
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 400;
         cursor: pointer;
-        transition: all 0.2s ease;
-        font-size: 14px;
-        margin-top: 15px;
+        transition: all 0.3s ease;
+        font-size: 13px;
+        margin-top: 20px;
+        position: relative;
       }
 
       .news-toggle:hover {
-        background-color: var(--hover-color);
-        border-color: var(--accent-color);
-        box-shadow: var(--shadow);
+        color: var(--accent-color);
+        border-bottom-color: var(--accent-color);
+      }
+
+      .news-toggle i {
+        font-size: 11px;
+        transition: transform 0.3s ease;
       }
 
       .news-collapsible {
@@ -713,7 +774,7 @@
 
             <h3 class="pub-category-title">Conference Papers</h3>
             <ol class="pub-list">
-              <li class="pub-item">
+              <li class="pub-item featured">
                 <div class="pub-content">
                   <span class="pub-title">Seeing Is Believing, But How Much? A Comprehensive Analysis of Verbalized Calibration in Vision-Language Models</span>
                   <span class="pub-authors"><strong>Weihao Xuan*</strong>, Qingcheng Zeng*, Heli Qi, Junjue Wang, & Naoto Yokoya† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
@@ -761,7 +822,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item featured">
                 <div class="pub-content">
                   <span class="pub-title">SynRS3D: A Synthetic Dataset for Global 3D Semantic Understanding From Monocular Remote Sensing Imagery</span>
                   <span class="pub-authors">Jian Song, Hongruixuan Chen, <strong>Weihao Xuan</strong>, Junshi Xia, & Naoto Yokoya†</span>
@@ -775,7 +836,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item featured">
                 <div class="pub-content">
                   <span class="pub-title">Cat-SAM: Conditional Tuning for Few-Shot Adaptation of Segment Anything Model</span>
                   <span class="pub-authors">Aoran Xiao*, <strong>Weihao Xuan*</strong>, Heli Qi, Yun Xing, Ruijie Ren, Xiaoqin Zhang, Ling Shao & Shijian Lu† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
