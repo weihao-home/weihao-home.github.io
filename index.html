@@ -118,7 +118,7 @@
 
       .social-links {
         display: flex;
-        gap: 8px;
+        gap: 12px;
         margin-top: 20px;
         flex-wrap: wrap;
       }
@@ -132,18 +132,19 @@
       .social-links a {
         display: inline-flex;
         align-items: center;
-        gap: 5px;
-        padding: 6px 12px;
-        background-color: var(--section-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 20px;
+        gap: 6px;
+        padding: 8px 16px;
+        background-color: var(--background-color);
+        border: 1.5px solid var(--border-color);
+        border-radius: 24px;
         color: var(--text-color);
         text-decoration: none;
-        font-weight: 500;
-        transition: all 0.25s ease;
-        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 14px;
         position: relative;
         overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
       }
 
       .social-links a::before {
@@ -162,17 +163,17 @@
       }
 
       .social-links a:hover {
-        background-color: var(--background-color);
+        background-color: var(--accent-color);
         border-color: var(--accent-color);
-        color: var(--accent-color);
-        transform: translateY(-1px);
-        box-shadow: 0 2px 8px rgba(41, 128, 185, 0.15);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(41, 128, 185, 0.25);
       }
 
       .social-links a i {
-        font-size: 12px;
-        opacity: 0.8;
-        transition: opacity 0.2s ease;
+        font-size: 14px;
+        opacity: 0.9;
+        transition: all 0.2s ease;
       }
 
       .social-links a:hover i {
@@ -391,23 +392,92 @@
       }
 
       .activities-content {
-        /* No special styling - matches education section */
+        max-width: 800px;
+      }
+
+      .activity-section {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .activity-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
 
       .activities-content h3 {
         color: var(--primary-color);
-        margin-bottom: 15px;
-        font-size: 1.3em;
+        margin-bottom: 12px;
+        font-size: 1.15em;
         font-weight: 600;
+        position: relative;
+        padding-left: 12px;
       }
 
-      .activities-content p {
-        line-height: 1.7;
-        margin-bottom: 15px;
+      .activities-content h3::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 3px;
+        height: 20px;
+        background: var(--accent-color);
+        border-radius: 2px;
       }
 
-      .activities-content strong {
-        color: var(--primary-color);
+      .activity-row {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 15px;
+        margin-bottom: 10px;
+        align-items: baseline;
+      }
+
+      .activity-row:last-child {
+        margin-bottom: 0;
+      }
+
+      .activity-label {
+        color: var(--text-light);
+        font-weight: 500;
+        font-size: 0.9em;
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .activity-content {
+        line-height: 1.5;
+      }
+
+      .activity-content em {
+        color: var(--text-light);
+        font-style: italic;
+      }
+
+      .activity-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        line-height: 1.4;
+      }
+
+      .activity-list em {
+        white-space: nowrap;
+      }
+
+      @media (max-width: 768px) {
+        .activity-row {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .activity-label {
+          text-align: left;
+          font-weight: 600;
+          color: var(--primary-color);
+        }
       }
 
       .funding-content p {
@@ -480,13 +550,89 @@
         max-height: 500px;
       }
 
-      .education-content p {
-        margin-bottom: 15px;
-        line-height: 1.7;
+      .education-content {
+        max-width: 800px;
+        position: relative;
       }
 
-      .education-content strong {
+      .education-item {
+        margin-bottom: 40px;
+        padding-left: 30px;
+        position: relative;
+      }
+
+      .education-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .education-item::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        border: 2px solid var(--background-color);
+        box-shadow: 0 0 0 2px var(--accent-color);
+      }
+
+      .education-item::after {
+        content: '';
+        position: absolute;
+        left: 11px;
+        top: 20px;
+        width: 2px;
+        height: calc(100% + 20px);
+        background: var(--border-color);
+      }
+
+      .education-item:last-child::after {
+        display: none;
+      }
+
+      .education-university {
         color: var(--primary-color);
+        font-weight: 600;
+        font-size: 1em;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .education-degree {
+        color: var(--text-color);
+        font-weight: 500;
+        margin-bottom: 6px;
+        display: block;
+      }
+
+      .education-details {
+        color: var(--text-light);
+        line-height: 1.6;
+        margin-bottom: 4px;
+      }
+
+      .education-details:last-child {
+        margin-bottom: 0;
+      }
+
+      .education-highlight {
+        color: var(--accent-color);
+        font-weight: 600;
+        position: relative;
+      }
+
+      .education-highlight::before {
+        content: '•';
+        color: var(--accent-color);
+        margin-right: 4px;
+        font-weight: bold;
+      }
+
+      .education-position {
+        color: var(--text-color);
+        font-style: italic;
       }
 
       footer {
@@ -917,18 +1063,24 @@
       <div class="container">
         <h2 class="section-title">Education</h2>
         <div class="education-content">
-          <p><strong>The University of Tokyo (東京大学)</strong><br>
-          Ph.D. in Complexity Science and Engineering<br>
-          <a href="https://www.ms.k.u-tokyo.ac.jp/members.html">Machine Learning and Statistical Data Analysis Lab (杉山・横矢・石田研究室)</a>, Advisor: Prof. <a href="https://naotoyokoya.com/">Naoto Yokoya</a><br>
-          Junior Research Associate (JRA) program at <a href="https://www.riken.jp/">RIKEN</a> <a href="https://aip.riken.jp/?lang=en">Center for Advanced Intelligence Project</a></p>
+          <div class="education-item">
+            <span class="education-university">The University of Tokyo (東京大学)</span>
+            <span class="education-degree">Ph.D. Candidate in Complexity Science and Engineering</span>
+            <div class="education-details"><a href="https://www.ms.k.u-tokyo.ac.jp/members.html">Machine Learning and Statistical Data Analysis Lab (杉山・横矢・石田研究室)</a>, Advisor: Prof. <a href="https://naotoyokoya.com/">Naoto Yokoya</a></div>
+            <div class="education-details"><span class="education-position">Junior Research Associate (JRA)</span> at <a href="https://www.riken.jp/">RIKEN</a> <a href="https://aip.riken.jp/?lang=en">Center for Advanced Intelligence Project</a></div>
+          </div>
 
-          <p><strong>Waseda University (早稲田大学)</strong><br>
-          M.Eng. in Computer Science<br>
-          Okuma Memorial Scholarship (Top Student)</p>
+          <div class="education-item">
+            <span class="education-university">Waseda University (早稲田大学)</span>
+            <span class="education-degree">M.Eng. in Computer Science</span>
+            <div class="education-details"><span class="education-highlight">Okuma Memorial Scholarship (Top Student)</span></div>
+          </div>
 
-          <p><strong>University of Leeds</strong><br>
-          B.Eng. in Mechanical Engineering<br>
-          First-Class Honours</p>
+          <div class="education-item">
+            <span class="education-university">University of Leeds</span>
+            <span class="education-degree">B.Eng. in Mechanical Engineering</span>
+            <div class="education-details"><span class="education-highlight">First-Class Honours</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -937,21 +1089,48 @@
       <div class="container">
         <h2 class="section-title">Professional Activities</h2>
         <div class="activities-content">
-          <h3>Reviewer</h3>
-          <p>
-            <strong>Conference:</strong> <em>NeurIPS</em>, <em>CVPR</em>, <em>ICCV</em>, <em>AAAI</em>, <em>ICCVW</em>, <em>ACMMM</em>, <em>IROS</em>, <em>ICDL</em>, <em>SII</em>, <em>CPHS</em><br>
-            <strong>Journal:</strong> <em>Pattern Recognition</em>, <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, <em>IEEE Transactions on Geoscience and Remote Sensing</em>
-          </p>
+          <div class="activity-section">
+            <h3>Reviewer</h3>
+            <div class="activity-row">
+              <div class="activity-label">Conference</div>
+              <div class="activity-content activity-list">
+                <em>NeurIPS</em>
+                <em>CVPR</em>
+                <em>ICCV</em>
+                <em>AAAI</em>
+                <em>ICCVW</em>
+                <em>ACMMM</em>
+                <em>IROS</em>
+                <em>ICDL</em>
+                <em>SII</em>
+                <em>CPHS</em>
+              </div>
+            </div>
+            <div class="activity-row">
+              <div class="activity-label">Journal</div>
+              <div class="activity-content activity-list">
+                <em>Pattern Recognition</em>
+                <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>
+                <em>IEEE Transactions on Geoscience and Remote Sensing</em>
+              </div>
+            </div>
+          </div>
 
-          <h3>Organization</h3>
-          <p>
-            <strong>Session Co-Chair:</strong> ER3: System Integration, <em>IEEE/SICE International Symposium on System Integration</em> (SII 2022)
-          </p>
+          <div class="activity-section">
+            <h3>Organization</h3>
+            <div class="activity-row">
+              <div class="activity-label">Session Co-Chair</div>
+              <div class="activity-content">ER3: System Integration, <em>IEEE/SICE International Symposium on System Integration</em> (SII 2022)</div>
+            </div>
+          </div>
 
-          <h3>Editorial Board</h3>
-          <p>
-            <strong>Guest Editor Assistant:</strong> Special Issue: Advancement of Multi-Source Remote Sensing Data Fusion in Environmental Monitoring, <em>Remote Sensing</em>
-          </p>
+          <div class="activity-section">
+            <h3>Editorial Board</h3>
+            <div class="activity-row">
+              <div class="activity-label">Guest Editor Assistant</div>
+              <div class="activity-content">Special Issue: Advancement of Multi-Source Remote Sensing Data Fusion in Environmental Monitoring, <em>Remote Sensing</em></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
