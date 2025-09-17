@@ -480,23 +480,60 @@
         }
       }
 
-      .funding-content p {
-        margin-bottom: 15px;
-        line-height: 1.7;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      .funding-content {
+        max-width: 800px;
+        position: relative;
       }
 
-      .funding-content strong {
+      .funding-item {
+        margin-bottom: 30px;
+        padding-left: 30px;
+        position: relative;
+      }
+
+      .funding-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .funding-item::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        border: 2px solid var(--background-color);
+        box-shadow: 0 0 0 2px var(--accent-color);
+      }
+
+      .funding-item::after {
+        content: '';
+        position: absolute;
+        left: 11px;
+        top: 20px;
+        width: 2px;
+        height: calc(100% + 10px);
+        background: var(--border-color);
+      }
+
+      .funding-item:last-child::after {
+        display: none;
+      }
+
+      .funding-title {
         color: var(--primary-color);
+        font-weight: 600;
+        font-size: 1.02em;
+        margin-bottom: 6px;
+        display: block;
       }
 
       .funding-date {
         color: var(--text-light);
         font-size: 0.9em;
-        flex-shrink: 0;
-        margin-left: 20px;
+        line-height: 1.6;
       }
 
       .news-content {
@@ -595,7 +632,7 @@
       .education-university {
         color: var(--primary-color);
         font-weight: 600;
-        font-size: 1em;
+        font-size: 1.02em;
         margin-bottom: 8px;
         display: block;
       }
@@ -1139,15 +1176,30 @@
       <div class="container">
         <h2 class="section-title">Funding and Awards</h2>
         <div class="funding-content">
-<!--          <p><strong>JHPCN Joint Usage and Research Funding</strong><span class="funding-date">Mar 2025</span></p>-->
+<!--          <div class="funding-item">
+            <span class="funding-title">JHPCN Joint Usage and Research Funding</span>
+            <div class="funding-date">Mar 2025</div>
+          </div>-->
 
-          <p><strong>NVIDIA Academic Grant</strong><span class="funding-date">Dec 2024</span></p>
+          <div class="funding-item">
+            <span class="funding-title">NVIDIA Academic Grant</span>
+            <div class="funding-date">Dec 2024</div>
+          </div>
 
-          <p><strong>RIKEN Junior Research Associate</strong><span class="funding-date">Dec 2023</span></p>
+          <div class="funding-item">
+            <span class="funding-title">RIKEN Junior Research Associate</span>
+            <div class="funding-date">Dec 2023</div>
+          </div>
 
-          <p><strong>Okuma Memorial Scholarship (Top Student)</strong><span class="funding-date">Dec 2022</span></p>
+          <div class="funding-item">
+            <span class="funding-title">Okuma Memorial Scholarship (Top Student)</span>
+            <div class="funding-date">Dec 2022</div>
+          </div>
 
-          <p><strong>Monbukagakusho Honors Scholarship, JASSO</strong><span class="funding-date">Apr 2022</span></p>
+          <div class="funding-item">
+            <span class="funding-title">Monbukagakusho Honors Scholarship, JASSO</span>
+            <div class="funding-date">Apr 2022</div>
+          </div>
         </div>
       </div>
     </section>
