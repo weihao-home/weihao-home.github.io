@@ -859,6 +859,7 @@
       <div class="container">
         <h2 class="section-title">News</h2>
         <div class="news-content" id="newsContainer">
+          <p><strong>[09/2025]</strong> Two papers accepted to NeurIPS 2025.</p>
           <p><strong>[08/2025]</strong> Three papers accepted to EMNLP 2025 Main Conference, with one selected as an <strong>Oral Paper</strong> (Full Meta Score 10/10).</p>
           <p><strong>[06/2025]</strong> One paper accepted to IROS 2025.</p>
           <p><strong>[09/2024]</strong> One paper accepted to NeurIPS 2024 as a <strong>Spotlight Paper</strong>.</p>
@@ -896,27 +897,7 @@
               </li>
 
 
-              <li class="pub-item">
-                <div class="pub-content">
-                  <span class="pub-title">DynamicVL: Benchmarking Multimodal Large Language Models for Dynamic City Understanding</span>
-                  <span class="pub-authors"><strong>Weihao Xuan*</strong>, Junjue Wang*, Heli Qi, Zihang Chen, Zhuo Zheng, Yanfei Zhong, Junshi Xia, & Naoto Yokoya† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
-                  <span class="pub-venue">arXiv preprint arXiv:2505.21076.</span>
-                  <div class="pub-links">
-                    <a href="https://arxiv.org/pdf/2505.21076" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-                  </div>
-                </div>
-              </li>
 
-              <li class="pub-item">
-                <div class="pub-content">
-                  <span class="pub-title">DisasterM3: A Remote Sensing Vision-Language Dataset for Disaster Damage Assessment and Response</span>
-                  <span class="pub-authors">Junjue Wang*, <strong>Weihao Xuan*</strong>, Heli Qi, Zhihao Liu, Kunyi Liu, Yuhan Wu, Hongruixuan Chen, Jian Song, Junshi Xia, Zhuo Zheng, & Naoto Yokoya† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
-                  <span class="pub-venue">arXiv preprint arXiv:2505.21089.</span>
-                  <div class="pub-links">
-                    <a href="https://arxiv.org/pdf/2505.21089" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-                  </div>
-                </div>
-              </li>
 
 
               <li class="pub-item">
@@ -995,6 +976,28 @@
 
             <h3 class="pub-category-title">Conference Papers</h3>
             <ol class="pub-list">
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-title">DynamicVL: Benchmarking Multimodal Large Language Models for Dynamic City Understanding</span>
+                  <span class="pub-authors"><strong>Weihao Xuan*</strong>, Junjue Wang*, Heli Qi, Zihang Chen, Zhuo Zheng, Yanfei Zhong, Junshi Xia, & Naoto Yokoya† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
+                  <span class="pub-venue">In The Thirty-ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025).</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2505.21076" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-title">DisasterM3: A Remote Sensing Vision-Language Dataset for Disaster Damage Assessment and Response</span>
+                  <span class="pub-authors">Junjue Wang*, <strong>Weihao Xuan*</strong>, Heli Qi, Zhihao Liu, Kunyi Liu, Yuhan Wu, Hongruixuan Chen, Jian Song, Junshi Xia, Zhuo Zheng, & Naoto Yokoya† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
+                  <span class="pub-venue">In The Thirty-ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025).</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2505.21089" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                  </div>
+                </div>
+              </li>
+
               <li class="pub-item featured" id="emnlp2025-oral">
                 <div class="pub-content">
                   <span class="pub-title">Seeing Is Believing, But How Much? A Comprehensive Analysis of Verbalized Calibration in Vision-Language Models</span>
@@ -1270,10 +1273,10 @@
       // Auto-organize news items
       if (newsContainer && newsCollapsible && newsToggle) {
         const newsItems = Array.from(newsContainer.querySelectorAll('p'));
-        const maxVisible = 4;
+        const maxVisible = 5;
 
         if (newsItems.length > maxVisible) {
-          // Move items beyond the 4th to collapsible section
+          // Move items beyond the 5th to collapsible section
           const itemsToMove = newsItems.slice(maxVisible);
           itemsToMove.forEach(item => {
             newsCollapsible.appendChild(item);
