@@ -59,7 +59,7 @@
 
       .profile-container {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 40px;
         margin-top: 20px;
       }
@@ -70,6 +70,10 @@
           align-items: center;
           text-align: center;
           gap: 30px;
+        }
+
+        .profile-image {
+          margin-top: 0;
         }
       }
 
@@ -82,6 +86,7 @@
         box-shadow: var(--shadow-hover);
         flex-shrink: 0;
         transition: all 0.3s ease;
+        margin-top: 55px;
       }
 
       .profile-image:hover {
@@ -963,15 +968,6 @@
                 <div class="coauthor-item">
                   <a href="https://scholar.google.com/citations?user=CREpn_AAAAAJ&hl=en">Zhuo Zheng</a>, Stanford University <em>(remote sensing)</em>
                 </div>
-                <div class="coauthor-item">
-                  <a href="https://scholar.google.com/citations?user=LZYmBvMAAAAJ&hl=zh-CN">Minghao Liu</a>, 2077AI Foundation, Singapore <em>(datasets and benchmarks)</em>
-                </div>
-                <div class="hidden-coauthors-collapsible" id="hiddenCoauthorsCollapsible" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
-                </div>
-                <button class="coauthors-toggle" id="hiddenCoauthorsToggle" style="display: none; margin-top: 15px;">
-                  <i class="fas fa-chevron-down" id="hiddenCoauthorsToggleIcon"></i>
-                  <span id="hiddenCoauthorsToggleText">Show More</span>
-                </button>
               </div>
             </div>
 
@@ -1541,43 +1537,7 @@
       // Hidden collaborators functionality
       const collaboratorsLink = document.getElementById('collaboratorsLink');
       const hiddenCollaborators = document.getElementById('hiddenCollaborators');
-      const hiddenCoauthorsContainer = document.getElementById('hiddenCoauthorsContainer');
-      const hiddenCoauthorsToggle = document.getElementById('hiddenCoauthorsToggle');
-      const hiddenCoauthorsCollapsible = document.getElementById('hiddenCoauthorsCollapsible');
-      const hiddenCoauthorsToggleIcon = document.getElementById('hiddenCoauthorsToggleIcon');
-      const hiddenCoauthorsToggleText = document.getElementById('hiddenCoauthorsToggleText');
 
-      // Auto-organize hidden coauthors items
-      if (hiddenCoauthorsContainer && hiddenCoauthorsCollapsible && hiddenCoauthorsToggle) {
-        const coauthorItems = Array.from(hiddenCoauthorsContainer.querySelectorAll('.coauthor-item'));
-        const maxVisible = 5;
-
-        if (coauthorItems.length > maxVisible) {
-          // Move items beyond the 5th to collapsible section
-          const itemsToMove = coauthorItems.slice(maxVisible);
-          itemsToMove.forEach(item => {
-            hiddenCoauthorsCollapsible.appendChild(item);
-          });
-
-          // Show the toggle button
-          hiddenCoauthorsToggle.style.display = 'inline-flex';
-        }
-
-        // Toggle functionality for show more/less
-        hiddenCoauthorsToggle.addEventListener('click', () => {
-          const isExpanded = hiddenCoauthorsCollapsible.style.maxHeight !== '0px';
-
-          if (isExpanded) {
-            hiddenCoauthorsCollapsible.style.maxHeight = '0px';
-            hiddenCoauthorsToggleIcon.className = 'fas fa-chevron-down';
-            hiddenCoauthorsToggleText.textContent = 'Show More';
-          } else {
-            hiddenCoauthorsCollapsible.style.maxHeight = '400px';
-            hiddenCoauthorsToggleIcon.className = 'fas fa-chevron-up';
-            hiddenCoauthorsToggleText.textContent = 'Show Less';
-          }
-        });
-      }
 
       // Toggle functionality for showing/hiding entire collaborators section
       if (collaboratorsLink && hiddenCollaborators) {
@@ -1595,13 +1555,6 @@
             }, 300);
             collaboratorsLink.innerHTML = originalHTML;
           } else {
-            // Reset show more state before showing
-            if (hiddenCoauthorsCollapsible && hiddenCoauthorsToggle) {
-              hiddenCoauthorsCollapsible.style.maxHeight = '0px';
-              hiddenCoauthorsToggleIcon.className = 'fas fa-chevron-down';
-              hiddenCoauthorsToggleText.textContent = 'Show More';
-            }
-
             // Fade in
             hiddenCollaborators.style.display = 'block';
             setTimeout(() => {
