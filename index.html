@@ -930,7 +930,7 @@
             <div id="about">
               <p>
                 My research focuses on <b>natural language understanding</b>, particularly in evaluation and post-training. I'm also actively engaged in <b>AI for Social Good</b>, applying NLP techniques and foundation models to Earth Observation and Medical domains through collaborative research.
-                I'm fortunate to work with <a href="#" id="collaboratorsLink" style="cursor: pointer; color: inherit; text-decoration: none; transition: all 0.2s ease; border-bottom: 1px solid transparent;">amazing collaborators <i class="fas fa-users" style="font-size: 0.8em; opacity: 0.6; margin-left: 2px;"></i></a> worldwide.
+                I'm fortunate to work with <a href="#" id="collaboratorsLink" style="cursor: pointer; color: inherit; text-decoration: none; transition: all 0.2s ease; border-bottom: 1px solid transparent;">amazing collaborators <i class="fas fa-users" style="font-size: 0.8em; opacity: 0.6; margin-left: 2px;"></i></a> worldwide, including close friends and brilliant researchers.
               </p>
             </div>
 
@@ -997,6 +997,7 @@
       <div class="container">
         <h2 class="section-title">News</h2>
         <div class="news-content" id="newsContainer">
+          <p><strong>[09/2025]</strong> Won 3rd place (3/261) in the <a href="https://ai4eo.eu/portfolio/ai-for-earthquake-response/" target="_blank">AI for Earthquake Response</a> competition, funded by European Space Agency, Disaster Charter, and IEEE.</p>
           <p><strong>[09/2025]</strong> Two papers accepted to NeurIPS 2025.</p>
           <p><strong>[08/2025]</strong> Three papers accepted to EMNLP 2025 Main Conference, with one selected as an <strong>Oral Paper</strong> (Full Meta Score 10/10).</p>
           <p><strong>[06/2025]</strong> One paper accepted to IROS 2025.</p>
@@ -1414,10 +1415,10 @@
       // Auto-organize news items
       if (newsContainer && newsCollapsible && newsToggle) {
         const newsItems = Array.from(newsContainer.querySelectorAll('p'));
-        const maxVisible = 5;
+        const maxVisible = 6;
 
         if (newsItems.length > maxVisible) {
-          // Move items beyond the 5th to collapsible section
+          // Move items beyond the 6th to collapsible section
           const itemsToMove = newsItems.slice(maxVisible);
           itemsToMove.forEach(item => {
             newsCollapsible.appendChild(item);
