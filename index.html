@@ -1011,6 +1011,7 @@
       <div class="container">
         <h2 class="section-title">News</h2>
         <div class="news-content" id="newsContainer">
+          <p><strong>[11/2025]</strong> One papersaccepted to AAAI 2026.</p>
           <p><strong>[09/2025]</strong> Our team won 3rd place (3/261) in the <a href="https://ai4eo.eu/portfolio/ai-for-earthquake-response/" target="_blank">AI for Earthquake Response</a>, a competition funded by European Space Agency, etc.</p>
           <p><strong>[09/2025]</strong> Two papers accepted to NeurIPS 2025.</p>
           <p><strong>[08/2025]</strong> Three papers accepted to EMNLP 2025 Main Conference, with one selected as an <strong>Oral Paper</strong> (Full Meta Score 10/10).</p>
@@ -1169,6 +1170,18 @@
 
             <h3 class="pub-category-title">Conference Papers</h3>
             <ol class="pub-list">
+            <li class="pub-item">
+                <div class="pub-content">
+                  <span class="pub-title">LandCraft: Designing the Structured 3D Landscapes via Text Guidance</span>
+                  <span class="pub-authors">Zhihao Liu*, Fang Liu*, <strong>Weihao Xuan</strong>, & Naoto Yokoya† <span class="pub-cofirst-note">(* indicates co-first authors)</span></span>
+                  <span class="pub-venue">In The 40th Annual AAAI Conference on Artificial Intelligence (AAAI 2026).</span>
+                  <div class="pub-links">
+                    <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                  </div>
+                </div>
+              </li>
+              
               <li class="pub-item">
                 <div class="pub-content">
                   <span class="pub-title">DynamicVL: Benchmarking Multimodal Large Language Models for Dynamic City Understanding</span>
@@ -1428,7 +1441,7 @@
       // Auto-organize news items
       if (newsContainer && newsCollapsible && newsToggle) {
         const newsItems = Array.from(newsContainer.querySelectorAll('p'));
-        const maxVisible = 6;
+        const maxVisible = 7;
 
         if (newsItems.length > maxVisible) {
           // Move items beyond the 6th to collapsible section
