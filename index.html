@@ -38,7 +38,7 @@
         line-height: 1.75;
         color: var(--text-body);
         background-color: var(--bg);
-        font-size: 15px;
+        font-size: 15.5px;
         -webkit-font-smoothing: antialiased;
       }
 
@@ -50,7 +50,7 @@
 
       header {
         border-bottom: 1px solid var(--border);
-        padding: 56px 0 44px;
+        padding: 60px 0 48px;
         background: var(--bg);
       }
 
@@ -169,8 +169,8 @@
 
       .nav-links {
         display: flex;
-        justify-content: flex-start;
-        gap: 24px;
+        justify-content: center;
+        gap: 32px;
         list-style: none;
       }
 
@@ -193,7 +193,7 @@
       }
 
       section {
-        padding: 28px 0;
+        padding: 32px 0;
         border-bottom: 1px solid var(--border);
       }
 
@@ -208,7 +208,7 @@
         text-transform: uppercase;
         letter-spacing: 2.5px;
         color: var(--text-muted);
-        margin-bottom: 20px;
+        margin-bottom: 24px;
         border-bottom: none;
         padding-bottom: 0;
       }
@@ -232,7 +232,7 @@
 
       .pub-item {
         margin-bottom: 0;
-        padding: 14px 0;
+        padding: 16px 0;
         background: transparent;
         border: none;
         border-bottom: 1px solid var(--border-light);
@@ -276,7 +276,7 @@
         font-weight: 600;
         color: var(--text-primary);
         margin-bottom: 4px;
-        font-size: 14.5px;
+        font-size: 15px;
         line-height: 1.4;
         display: block;
       }
@@ -286,7 +286,7 @@
         font-weight: 400;
         color: var(--text-secondary);
         display: block;
-        font-size: 13px;
+        font-size: 13.5px;
         line-height: 1.5;
       }
 
@@ -300,7 +300,7 @@
         color: var(--text-muted);
         margin-bottom: 4px;
         display: block;
-        font-size: 13px;
+        font-size: 13.5px;
         line-height: 1.4;
       }
 
@@ -397,7 +397,7 @@
       }
 
       .activity-section {
-        margin-bottom: 16px;
+        margin-bottom: 18px;
         padding-bottom: 14px;
         border-bottom: 1px solid var(--border-light);
       }
@@ -484,7 +484,7 @@
 
       .funding-item {
         margin-bottom: 0;
-        padding: 10px 0;
+        padding: 12px 0;
         padding-left: 0;
         position: relative;
         border-bottom: 1px solid var(--border-light);
@@ -524,16 +524,37 @@
 
       .news-content p {
         line-height: 1.7;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
         font-size: 14px;
         color: var(--text-body);
+        padding-left: 80px;
       }
 
       .news-content p strong:first-child {
-        color: var(--text-muted);
-        font-weight: 500;
-        font-family: 'Helvetica Neue', 'Source Sans Pro', Arial, sans-serif;
-        font-size: 13px;
+        display: inline-block;
+        width: 80px;
+        margin-left: -80px;
+        color: var(--text-secondary);
+        font-weight: 400;
+        font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+        font-size: 11.5px;
+        letter-spacing: 0.3px;
+        text-decoration: underline;
+        text-decoration-color: rgba(139, 37, 0, 0.2);
+        text-underline-offset: 3px;
+        vertical-align: baseline;
+      }
+
+      .news-content p a {
+        color: var(--text-primary);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border);
+        transition: all 0.2s ease;
+      }
+
+      .news-content p a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
       }
 
       .news-content strong a {
@@ -601,7 +622,7 @@
 
       .education-item {
         margin-bottom: 0;
-        padding: 14px 0;
+        padding: 16px 0;
         padding-left: 0;
         position: relative;
         border-bottom: 1px solid var(--border-light);
@@ -622,7 +643,7 @@
       .education-university {
         color: var(--text-primary);
         font-weight: 600;
-        font-size: 14.5px;
+        font-size: 15px;
         margin-bottom: 2px;
         display: block;
       }
@@ -632,7 +653,7 @@
         font-weight: 400;
         margin-bottom: 4px;
         display: block;
-        font-size: 14px;
+        font-size: 14.5px;
       }
 
       .education-details {
@@ -670,7 +691,7 @@
       }
 
       .coauthor-item {
-        margin-bottom: 6px;
+        margin-bottom: 7px;
         line-height: 1.6;
         font-size: 13px;
         padding-left: 0;
@@ -678,7 +699,7 @@
       }
 
       #hiddenCoauthorsContainer .coauthor-item {
-        margin-bottom: 6px;
+        margin-bottom: 7px;
         font-size: 13px;
         line-height: 1.5;
       }
@@ -811,11 +832,11 @@
         }
 
         section {
-          padding: 20px 0;
+          padding: 24px 0;
         }
 
         .pub-item {
-          padding: 12px 0;
+          padding: 14px 0;
         }
       }
     </style>
@@ -1431,6 +1452,7 @@
             <div class="activity-row">
               <div class="activity-label">Journal</div>
               <div class="activity-content activity-list">
+                <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>
                 <em>Pattern Recognition</em>
                 <em>IEEE Robotics and Automation Letters (RA-L)</em>
               </div>
