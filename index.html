@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Weihao XUAN's Homepage</title>
+    <title>Weihao Xuan</title>
     <meta name="author" content="Weihao Xuan">
+    <meta name="description" content="Weihao Xuan — Ph.D. candidate at The University of Tokyo. Research on reliable multimodal AI, NLP, and AI for Science.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/web_icons/web.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -127,6 +128,7 @@
         border-radius: 50%;
         object-fit: cover;
         display: block;
+        margin-top: 6px;
         box-shadow: 0 1px 0 var(--border), 0 6px 24px -8px rgba(0,0,0,0.18);
         transition: filter .4s ease;
       }
@@ -134,8 +136,8 @@
         box-shadow: 0 1px 0 var(--border), 0 6px 24px -8px rgba(0,0,0,0.6);
       }
       .profile-caption {
-        margin-top: 20px;
-        padding-top: 14px;
+        margin-top: 14px;
+        padding-top: 12px;
         border-top: 1px solid var(--border);
         width: 180px;
         font-family: var(--mono);
@@ -468,6 +470,72 @@
         margin-bottom: 18px;
         letter-spacing: 0.2px;
       }
+
+      .pub-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 26px;
+        padding-bottom: 18px;
+        border-bottom: 1px dashed var(--border);
+        align-items: center;
+      }
+      .pub-filters-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-faint);
+        margin-right: 10px;
+      }
+      .pub-chip {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        padding: 5px 12px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text-secondary);
+        cursor: pointer;
+        transition: all 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .pub-chip:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .pub-chip.active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .pub-chip .chip-count {
+        font-size: 9.5px;
+        opacity: 0.7;
+      }
+      .pub-chip.active .chip-count { opacity: 0.85; }
+
+      .pub-category-title .cat-hidden-note {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--text-faint);
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        text-transform: none;
+        margin-left: auto;
+      }
+      .pub-item.filter-hidden { display: none; }
+      .pub-category-title.cat-empty { opacity: 0.4; }
+      .pub-empty-state {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--text-faint);
+        padding: 20px 0;
+        display: none;
+      }
+      .pub-empty-state.visible { display: block; }
 
       .pub-category-title {
         font-family: var(--mono);
@@ -823,7 +891,7 @@
           </div>
 
           <div class="profile-content">
-            <div class="eyebrow">Ph.D. Candidate · NLP &amp; AI4Science</div>
+            <div class="eyebrow">Ph.D. Candidate · NLP · Vision · AI for Science</div>
 
             <h1>Weihao Xuan<span class="cn">宣　偉豪</span></h1>
 
@@ -832,7 +900,7 @@
             </div>
 
             <div class="profile-links">
-              <a href="/cdn-cgi/l/email-protection#681f0d01000907101d0906280f460d0b0b461d451c0703110746090b460218"><i class="fas fa-envelope"></i> Email</a>
+              <a href="/cdn-cgi/l/email-protection#d9aebcb0b1b8b6a1acb8b799bef7bcbabaf7acf4adb6b2a0b6f7b8baf7b3a9"><i class="fas fa-envelope"></i> Email</a>
               <a href="https://github.com/weihao1115"><i class="fab fa-github"></i> GitHub</a>
               <a href="https://scholar.google.com/citations?hl=en&user=7e0W-2AAAAAJ"><i class="fas fa-graduation-cap"></i> Scholar</a>
             </div>
@@ -842,10 +910,10 @@
                 I'm a Ph.D. candidate at <a href="https://www.ms.k.u-tokyo.ac.jp/members.html">Machine Learning and Statistical Data Analysis Lab (杉山・横矢・石田研究室)</a>, <a href="https://www.u-tokyo.ac.jp/">The University of Tokyo (東京大学)</a>, where I'm very fortunate to be advised by Prof. <a href="https://naotoyokoya.com/">Naoto Yokoya</a>. I'm also under the Junior Research Associate (JRA) program at <a href="https://www.riken.jp/">RIKEN</a> <a href="https://aip.riken.jp/?lang=en">Center for Advanced Intelligence Project</a>.
               </p>
               <p>
-                My research focuses on <b>natural language processing</b>, particularly in evaluation and post-training. I'm also actively engaged in <b>AI for Science</b> (Earth Observation, Biology, Biomedical, Material Science). I work with <a href="#" id="collaboratorsLink">amazing collaborators<i class="fas fa-users"></i></a>.
+                My research builds <b>reliable multimodal AI systems</b>: models that know what they know, and that generalize from the lab to the world. On the foundations side, I study the reliability of <b>large language models, vision-language models, and increasingly, agentic systems</b>: their calibration, hallucinations, reasoning under uncertainty, and multilingual behavior. On the applications side, I use these models to understand the physical world at scale. Most of my fieldwork is in <b>Earth observation</b>, with active collaborations in <b>AI for Science</b> across medicine, biomedicine, and biology. I work with <a href="#" id="collaboratorsLink">amazing collaborators<i class="fas fa-users"></i></a>.
               </p>
               <p class="contact-callout">
-                <i class="fas fa-envelope"></i>If you are interested in working with me or joining our lab, feel free to <a href="/cdn-cgi/l/email-protection#fd8a9894959c9285889c93bd9ad3989e9ed388d08992968492d39c9ed3978d">reach out via email</a>.
+                <i class="fas fa-envelope"></i>If you are interested in working with me or joining our lab, feel free to <a href="/cdn-cgi/l/email-protection#7a0d1f13121b15020f1b143a1d541f1919540f570e15110315541b1954100a">reach out via email</a>.
               </p>
             </div>
 
@@ -926,10 +994,20 @@
         <div class="section-body">
           <div class="pub-note-legend">* co-first author · † corresponding author</div>
 
+          <div class="pub-filters" role="tablist">
+            <span class="pub-filters-label">Filter</span>
+            <button class="pub-chip active" data-filter="all">All</button>
+            <button class="pub-chip" data-filter="nlp">Natural Language Processing</button>
+            <button class="pub-chip" data-filter="cv">Computer Vision</button>
+            <button class="pub-chip" data-filter="eo">Earth Observation</button>
+            <button class="pub-chip" data-filter="ai4science">AI for Science</button>
+          </div>
+          <div class="pub-empty-state">No publications match this filter.</div>
+
           <div class="publications-container">
             <h3 class="pub-category-title">Preprints</h3>
             <ol class="pub-list">
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp">
                 <span class="pub-title">Say Something Else: Rethinking Contextual Privacy as Information Sufficiency</span>
                 <span class="pub-authors">Yunze Xiao*, Wenkai Li*, Xiaoyuan Wu, Ningshan Ma, Yueqi Song, &amp; <strong>Weihao Xuan†</strong></span>
                 <span class="pub-venue">arXiv preprint arXiv:2604.06409.</span>
@@ -938,7 +1016,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="eo">
                 <span class="pub-title">OpenEarth-Agent: From Tool Calling to Tool Creation for Open-Environment Earth Observation</span>
                 <span class="pub-authors">Sijie Zhao, Feng Liu, Xueliang Zhang, Hao Chen, Xinyu Gu, Zhe Jiang, Fenghua Ling, Ben Fei, Wenlong Zhang, Junjue Wang, <strong>Weihao Xuan</strong>, Pengfeng Xiao, Naoto Yokoya, &amp; Lei Bai</span>
                 <span class="pub-venue">arXiv preprint arXiv:2603.22148.</span>
@@ -948,7 +1026,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="eo">
                 <span class="pub-title">Experience-Driven Multi-Agent Systems Are Training-free Context-aware Earth Observers</span>
                 <span class="pub-authors">Pengyu Dai, <strong>Weihao Xuan</strong>, Junjue Wang, Hongruixuan Chen, Jian Song, Yafei Ou, &amp; Naoto Yokoya</span>
                 <span class="pub-venue">arXiv preprint arXiv:2602.02559.</span>
@@ -957,7 +1035,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp ai4science">
                 <span class="pub-title">Towards Valid Student Simulation with Large Language Models</span>
                 <span class="pub-authors">Zhihao Yuan*, Yunze Xiao*, Ming Li*, <strong>Weihao Xuan</strong>, Richard Jiarui Tong, Mona Diab, &amp; Tom Mitchell†</span>
                 <span class="pub-venue">arXiv preprint arXiv:2601.05473.</span>
@@ -966,7 +1044,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp ai4science">
                 <span class="pub-title">Toward Global Large Language Models in Medicine</span>
                 <span class="pub-authors">Rui Yang, Huitao Li, <strong>Weihao Xuan†</strong>, Heli Qi, Xin Li, Kunyu Yu, Yingjian Chen, Rongrong Wang, Jacques Behmoaras, Tianxi Cai, Bibhas Chakraborty, Qingyu Chen, Lionel Tim-Ee Cheng, Marie-Louise Damwanza, Chido Dzinotyiwei, Aosong Feng, Chuan Hong, Yusuke Iwasawa, Yuhe Ke, Linah Kitala, Taehoon Ko, Jisan Lee, Irene Li, Jonathan Chong Kai Liew, Hongfang Liu, Lian Leng Low, Edison Marrese-Taylor, Yutaka Matsuo, Isheanesu Misi, Yilin Ning, Jasmine Chiat Ling Ong, Marcus Eng Hock Ong, Enrico Petretto, Hossein Rouhizadeh, Abiram Sandralegar, Oren Schreier, Iain Bee Huat Tan, Patrick Tan, Daniel Shu Wei Ting, Junjue Wang, Chunhua Weng, Matthew Yu Heng Wong, Fang Wu, Yunze Xiao, Xuhai Xu, Qingcheng Zeng, Zhuo Zheng, Yifan Peng†, Douglas Teodoro†, &amp; Nan Liu†</span>
                 <span class="pub-venue">arXiv preprint arXiv:2601.02186. (under review)</span>
@@ -975,7 +1053,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="cv ai4science">
                 <span class="pub-title">TeamPath: Building MultiModal Pathology Experts with Reasoning AI Copilots</span>
                 <span class="pub-authors">Tianyu Liu*, <strong>Weihao Xuan*</strong>, Hao Wu, Peter Humphrey, Marcello DiStasio, Heli Qi, Rui Yang, Simeng Han, Tinglin Huang, Fang Wu, Nan Liu, Irene Li, Hua Xu, &amp; Hongyu Zhao†</span>
                 <span class="pub-venue">arXiv preprint arXiv:2511.17652. (under review)</span>
@@ -984,7 +1062,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp ai4science">
                 <span class="pub-title">Retrieval-Augmented Generation in Medicine: A Scoping Review of Technical Implementations, Clinical Applications, and Ethical Considerations</span>
                 <span class="pub-authors">Rui Yang*, Matthew Yu Heng Wong*, Huitao Li*, Xin Li, Wentao Zhu, Jingchi Liao, Kunyu Yu, Jonathan Chong Kai Liew, <strong>Weihao Xuan</strong>, Yingjian Chen, Yuhe Ke, Jasmine Chiat Ling Ong, Douglas Teodoro, Chuan Hong, Daniel Shu Wei Ting, &amp; Nan Liu†</span>
                 <span class="pub-venue">arXiv preprint arXiv:2511.05901. (under review)</span>
@@ -993,7 +1071,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp">
                 <span class="pub-badge-hf"><i class="fas fa-fire"></i> HF Daily Top 3 · 2025.07.22</span>
                 <span class="pub-title">The Invisible Leash: Why RLVR May Not Escape Its Origin</span>
                 <span class="pub-authors">Fang Wu*, <strong>Weihao Xuan*</strong>, Ximing Lu, Zaid Harchaoui, &amp; Yejin Choi†</span>
@@ -1003,7 +1081,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp">
                 <span class="pub-badge-hf"><i class="fas fa-fire"></i> HF Daily Top 2 · 2025.08.07</span>
                 <span class="pub-title">VeriWeb: Verifiable Long-Chain Web Benchmark for Agentic Information-Seeking</span>
                 <span class="pub-authors">Shunyu Liu, Minghao Liu, Huichi Zhou, Zhenyu Cui, Yang Zhou, Yuhao Zhou, Jialiang Gao, Heng Zhou, Yunhao Yang, Wendong Fan, Puzhen Zhang, Ge Zhang, Jiajun Shi, <strong>Weihao Xuan</strong>, Jiaxing Huang, Shuang Luo, Fang Wu, Heli Qi, Qingcheng Zeng, Junjie Wang, Aosong Feng, Jindi Lv, Sicong Jiang, Ziqi Ren, Wangchunshu Zhou, Zhenfei Yin, Wenlong Zhang, Guohao Li, Wenhao Yu, Lei Ma, Lei Bai, Qunshu Lin, Mingli Song, Dacheng Tao</span>
@@ -1015,7 +1093,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp cv">
                 <span class="pub-title">PIN: A Knowledge-Intensive Dataset for Paired and Interleaved Multimodal Documents</span>
                 <span class="pub-authors">Junjie Wang†, Yuxiang Zhang, Minghao Liu, Yin Zhang, Yatai Ji, <strong>Weihao Xuan</strong>, Nie Lin, Kang Zhu, Zhiqiang Lin, Yiming Ren, Chunyang Jiang, Yiyao Yu, Zekun Wang, Tiezhen Wang, Wenhao Huang, Jie Fu, Qunshu Liu, Yujiu Yang, Ge Zhang, Ruibin Yuan†, Bei Chen†, &amp; Wenhu Chen†</span>
                 <span class="pub-venue">arXiv preprint arXiv:2406.13923.</span>
@@ -1026,7 +1104,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="cv">
                 <span class="pub-badge-hf"><i class="fas fa-fire"></i> HF Daily Top 3 · 2024.08.20</span>
                 <span class="pub-title">Segment Anything With Multiple Modalities</span>
                 <span class="pub-authors">Aoran Xiao*, <strong>Weihao Xuan*</strong>, Heli Qi, Yun Xing, Naoto Yokoya†, &amp; Shijian Lu†</span>
@@ -1040,7 +1118,7 @@
 
             <h3 class="pub-category-title">Conference Papers</h3>
             <ol class="pub-list">
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp">
                 <span class="pub-title">The Confidence Dichotomy: Analyzing and Mitigating Miscalibration in Tool-Use Agents</span>
                 <span class="pub-authors"><strong>Weihao Xuan*</strong>, Qingcheng Zeng*, Heli Qi, Yunze Xiao, Junjue Wang, &amp; Naoto Yokoya†</span>
                 <span class="pub-venue">In The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026 Main Conference).</span>
@@ -1049,7 +1127,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp">
                 <span class="pub-title">The Hidden Costs and Measurement Gaps of Reinforcement Learning with Verifiable Rewards</span>
                 <span class="pub-authors">Fang Wu*, Aaron Tu*, <strong>Weihao Xuan*</strong>, Heli Qi*, Xu Huang, Qingcheng Zeng, Shayan Talaei, Yijia Xiao, Peng Xia, Xiangru Tang, Yuchen Zhuang, Bing Hu, Hanqun Cao, Wenqi Shi, Rui Yang, Nan Liu, Huaxiu Yao, Ge Liu, Li Erran Li, Amin Saberi, Naoto Yokoya, Jure Leskovec, Yejin Choi†</span>
                 <span class="pub-venue">In The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026 Main Conference).</span>
@@ -1058,7 +1136,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp">
                 <span class="pub-title">How to Improve LLMs' Performance on Specific Languages: A Perspective on LLM-Derived Language Similarity</span>
                 <span class="pub-authors">Xinhe Shi, Qingcheng Zeng, <strong>Weihao Xuan</strong>, &amp; Linchao Zhu†</span>
                 <span class="pub-venue">In The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026 Main Conference).</span>
@@ -1067,7 +1145,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp">
                 <span class="pub-title">Code-Switching Information Retrieval: Benchmarks, Analysis, and the Limits of Current Retrievers</span>
                 <span class="pub-authors">Qingcheng Zeng*, Yuheng Lu*, Zeqi Zhou, Heli Qi, Puxuan Yu, Fuheng Zhao, Hitomi Yanaka, <strong>Weihao Xuan†</strong>, Naoto Yokoya</span>
                 <span class="pub-venue">In The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026 Findings).</span>
@@ -1076,7 +1154,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp ai4science">
                 <span class="pub-title">Sentipolis: Emotion-Aware Agents for Social Simulations</span>
                 <span class="pub-authors">Chiyuan Fu*, Lyuhao Chen*, Yunze Xiao*, <strong>Weihao Xuan</strong>, Carlos Busso, &amp; Mona T. Diab†</span>
                 <span class="pub-venue">In The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026 Findings).</span>
@@ -1085,7 +1163,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="cv">
                 <span class="pub-title">Direction-aware 3D Large Multimodal Models</span>
                 <span class="pub-authors">Quan Liu, <strong>Weihao Xuan</strong>, Junjue Wang, Naoto Yokoya, Ling Shao, &amp; Shijian Lu†</span>
                 <span class="pub-venue">In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2026).</span>
@@ -1094,7 +1172,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp">
                 <span class="pub-badge-hf"><i class="fas fa-fire"></i> HF Daily Top 1 · 2025.10.02</span>
                 <span class="pub-title">DeepSearch: Overcome the Bottleneck of Reinforcement Learning with Verifiable Rewards via Monte Carlo Tree Search</span>
                 <span class="pub-authors">Fang Wu*, <strong>Weihao Xuan*</strong>, Heli Qi*, Ximing Lu, Aaron Tu, Li Erran Li, Yejin Choi†</span>
@@ -1105,7 +1183,7 @@
                 </div>
               </li>
 
-              <li class="pub-item featured" id="iclr2026-oral">
+              <li class="pub-item featured" id="iclr2026-oral" data-cats="nlp">
                 <span class="pub-badge"><i class="fas fa-microphone"></i> ICLR 2026 Oral · Top 1.1%</span>
                 <span class="pub-badge-hf"><i class="fas fa-fire"></i> HF Daily Top 3</span>
                 <span class="pub-title">Multiplayer Nash Preference Optimization</span>
@@ -1117,7 +1195,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="cv">
                 <span class="pub-title">Is Pre-Training Applicable to the Decoder for Dense Prediction</span>
                 <span class="pub-authors">Chao Ning, Wanshui Gan, <strong>Weihao Xuan</strong>, &amp; Naoto Yokoya†</span>
                 <span class="pub-venue">In 2026 IEEE International Conference on Robotics &amp; Automation (ICRA 2026).</span>
@@ -1126,7 +1204,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp cv">
                 <span class="pub-title">Taming Object Hallucinations with Verified Atomic Confidence Estimation</span>
                 <span class="pub-authors">Jiarui Liu, <strong>Weihao Xuan</strong>, Zhijing Jin, Mona Diab†</span>
                 <span class="pub-venue">In The 19th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2026).</span>
@@ -1135,7 +1213,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp">
                 <span class="pub-title">The Pragmatic Mind of Machines: Tracing the Emergence of Pragmatic Competence in Large Language Models</span>
                 <span class="pub-authors">Kefan Yu*, Qingcheng Zeng*, <strong>Weihao Xuan</strong>, Wanxin Li, Jingyi Wu, &amp; Rob Voigt†</span>
                 <span class="pub-venue">In The 19th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2026) (also in COLM 2025 PragLM Workshop).</span>
@@ -1144,7 +1222,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="cv">
                 <span class="pub-title">LandCraft: Designing the Structured 3D Landscapes via Text Guidance</span>
                 <span class="pub-authors">Zhihao Liu*, Fang Liu*, <strong>Weihao Xuan</strong>, &amp; Naoto Yokoya†</span>
                 <span class="pub-venue">In The 40th Annual AAAI Conference on Artificial Intelligence (AAAI 2026).</span>
@@ -1154,7 +1232,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="eo">
                 <span class="pub-title">DynamicVL: Benchmarking Multimodal Large Language Models for Dynamic City Understanding</span>
                 <span class="pub-authors"><strong>Weihao Xuan*</strong>, Junjue Wang*, Heli Qi, Zihang Chen, Zhuo Zheng, Yanfei Zhong, Junshi Xia, &amp; Naoto Yokoya†</span>
                 <span class="pub-venue">In The Thirty-ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025).</span>
@@ -1164,7 +1242,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="eo">
                 <span class="pub-title">DisasterM3: A Remote Sensing Vision-Language Dataset for Disaster Damage Assessment and Response</span>
                 <span class="pub-authors">Junjue Wang*, <strong>Weihao Xuan*</strong>, Heli Qi, Zhihao Liu, Kunyi Liu, Yuhan Wu, Hongruixuan Chen, Jian Song, Junshi Xia, Zhuo Zheng, &amp; Naoto Yokoya†</span>
                 <span class="pub-venue">In The Thirty-ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025).</span>
@@ -1174,7 +1252,7 @@
                 </div>
               </li>
 
-              <li class="pub-item featured" id="emnlp2025-oral">
+              <li class="pub-item featured" id="emnlp2025-oral" data-cats="nlp cv">
                 <span class="pub-badge"><i class="fas fa-microphone"></i> EMNLP 2025 Oral · Meta 10/10</span>
                 <span class="pub-title">Seeing Is Believing, But How Much? A Comprehensive Analysis of Verbalized Calibration in Vision-Language Models</span>
                 <span class="pub-authors"><strong>Weihao Xuan*</strong>, Qingcheng Zeng*, Heli Qi, Junjue Wang, &amp; Naoto Yokoya†</span>
@@ -1184,7 +1262,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp">
                 <span class="pub-title">MMLU-ProX: A Multilingual Benchmark for Advanced Large Language Model Evaluation</span>
                 <span class="pub-authors"><strong>Weihao Xuan†</strong>, Rui Yang, Heli Qi, Qingcheng Zeng, Yunze Xiao, Aosong Feng, Dairui Liu, Yun Xing, Junjue Wang, Fan Gao, Jinghui Lu, Yuang Jiang, Huitao Li, Xin Li, Kunyu Yu, Ruihai Dong, Shangding Gu, Yuekang Li, Xiaofei Xie, Felix Juefei-Xu, Foutse Khomh, Osamu Yoshie, Qingyu Chen, Douglas Teodoro, Nan Liu, Randy Goebel, Lei Ma, Edison Marrese-Taylor, Shijian Lu, Yusuke Iwasawa, Yutaka Matsuo, &amp; Irene Li†</span>
                 <span class="pub-venue">In The 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025 Main Conference).</span>
@@ -1196,7 +1274,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="nlp">
                 <span class="pub-title">Thinking Out Loud: Do Reasoning Models Know When They're Right?</span>
                 <span class="pub-authors">Qingcheng Zeng*, <strong>Weihao Xuan*</strong>, Leyang Cui, &amp; Rob Voigt†</span>
                 <span class="pub-venue">In The 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025 Main Conference).</span>
@@ -1205,7 +1283,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="eo">
                 <span class="pub-title">Geo3DVQA: Evaluating Vision-Language Models for 3D Geospatial Reasoning from Aerial Imagery</span>
                 <span class="pub-authors">Mai Tsujimoto, Junjue Wang, <strong>Weihao Xuan</strong>, &amp; Naoto Yokoya†</span>
                 <span class="pub-venue">In The IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2026).</span>
@@ -1214,7 +1292,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="cv">
                 <span class="pub-title">LR2Depth: Large-Region Aggregation at Low Resolution for Efficient Monocular Depth Estimation</span>
                 <span class="pub-authors">Chao Ning, <strong>Weihao Xuan</strong>, Wanshui Gan, &amp; Naoto Yokoya†</span>
                 <span class="pub-venue">In IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025)</span>
@@ -1223,7 +1301,7 @@
                 </div>
               </li>
 
-              <li class="pub-item featured" id="neurips2024-spotlight">
+              <li class="pub-item featured" id="neurips2024-spotlight" data-cats="eo">
                 <span class="pub-badge"><i class="fas fa-lightbulb"></i> NeurIPS 2024 Spotlight · Top 3.1%</span>
                 <span class="pub-title">SynRS3D: A Synthetic Dataset for Global 3D Semantic Understanding From Monocular Remote Sensing Imagery</span>
                 <span class="pub-authors">Jian Song, Hongruixuan Chen, <strong>Weihao Xuan</strong>, Junshi Xia, &amp; Naoto Yokoya†</span>
@@ -1235,7 +1313,7 @@
                 </div>
               </li>
 
-              <li class="pub-item featured" id="eccv2024-oral">
+              <li class="pub-item featured" id="eccv2024-oral" data-cats="cv">
                 <span class="pub-badge"><i class="fas fa-microphone"></i> ECCV 2024 Oral · Top 2.3% (200/8585)</span>
                 <span class="pub-title">CAT-SAM: Conditional Tuning for Few-Shot Adaptation of Segment Anything Model</span>
                 <span class="pub-authors">Aoran Xiao*, <strong>Weihao Xuan*</strong>, Heli Qi, Yun Xing, Ruijie Ren, Xiaoqin Zhang, Ling Shao &amp; Shijian Lu†</span>
@@ -1246,7 +1324,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="cv">
                 <span class="pub-title">3D Semantic Segmentation in the Wild: Learning Generalized Models for Adverse-Condition Point Clouds</span>
                 <span class="pub-authors">Aoran Xiao, Jiaxing Huang, <strong>Weihao Xuan</strong>, Ruijie Ren, Kangcheng Liu, Dayan Guan, Abdulmotaleb El Saddik, Shijian Lu†, &amp; Eric Xing</span>
                 <span class="pub-venue">In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2023) (pp. 9382–9392).</span>
@@ -1256,7 +1334,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="ai4science">
                 <span class="pub-title">On a Network SIS Model With Opinion Dynamics</span>
                 <span class="pub-authors"><strong>Weihao Xuan</strong>, Ruijie Ren, Philip E. Paré, Mengbin Ye, Sebastian Ruf, &amp; Ji Liu†</span>
                 <span class="pub-venue">IFAC-PapersOnLine, 53(2), 2582–2587.</span>
@@ -1268,7 +1346,7 @@
 
             <h3 class="pub-category-title">Journal Papers</h3>
             <ol class="pub-list">
-              <li class="pub-item">
+              <li class="pub-item" data-cats="eo">
                 <span class="pub-title">AI for Earthquake Response: Outcomes &amp; Insights from a Global Spaceborne Rapid Mapping Challenge</span>
                 <span class="pub-authors">Patrick Ebel, Mounia El Baz, Junjue Wang, <strong>Weihao Xuan</strong>, Heli Qi, Zhuo Zheng, Naoto Yokoya, Junghwan Park, Jaewan Park, Arthur Elskens, Eléonore Charles, Zachary Foltz, Iacopo Modica, Philippe Bally, Christian Bossung, Marco Chini, Nicolas Longépé, &amp; Gabriele Meoni</span>
                 <span class="pub-venue">IEEE Geoscience and Remote Sensing Magazine.</span>
@@ -1277,7 +1355,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="eo">
                 <span class="pub-title">CityVLM: Towards Sustainable Urban Development via Multi-View Coordinated Vision–Language Model</span>
                 <span class="pub-authors">Junjue Wang*, <strong>Weihao Xuan*</strong>, Heli Qi, Zihang Chen, Hongruixuan Chen, Zhuo Zheng, Junshi Xia, Yanfei Zhong, &amp; Naoto Yokoya†</span>
                 <span class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing.</span>
@@ -1286,7 +1364,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="eo">
                 <span class="pub-title">BRIGHT: A Globally Distributed Multimodal Building Damage Assessment Dataset With Very-High-Resolution for All-Weather Disaster Response</span>
                 <span class="pub-authors">Hongruixuan Chen, Jian Song, Olivier Dietrich, Clifford Broni-Bediako, <strong>Weihao Xuan</strong>, Junjue Wang, Xinlei Shao, Yimin Wei, Junshi Xia, Cuiling Lan, Konrad Schindler, &amp; Naoto Yokoya†</span>
                 <span class="pub-venue">Earth System Science Data (ESSD) (also in ICCV 2025 SEA Workshop, IGARSS 2025).</span>
@@ -1296,7 +1374,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="eo">
                 <span class="pub-title">Foundation Models for Remote Sensing and Earth Observation: A Survey</span>
                 <span class="pub-authors">Aoran Xiao, <strong>Weihao Xuan</strong>, Junjue Wang, Jiaxing Huang, Dacheng Tao, Shijian Lu†, &amp; Naoto Yokoya†</span>
                 <span class="pub-venue">IEEE Geoscience and Remote Sensing Magazine.</span>
@@ -1305,7 +1383,7 @@
                 </div>
               </li>
 
-              <li class="pub-item">
+              <li class="pub-item" data-cats="cv">
                 <span class="pub-title">TSG-Seg: Temporal-selective guidance for semi-supervised semantic segmentation of 3D LiDAR point clouds</span>
                 <span class="pub-authors"><strong>Weihao Xuan</strong>, Heli Qi, &amp; Aoran Xiao</span>
                 <span class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing.</span>
@@ -1496,6 +1574,56 @@
             toggleText.textContent = expanded ? 'Hide earlier' : 'Show earlier';
           });
         }
+      })();
+
+      /* ————————————— Publication filter chips ————————————— */
+      (function () {
+        const chips = document.querySelectorAll('.pub-chip');
+        const items = document.querySelectorAll('.pub-item');
+        const catTitles = document.querySelectorAll('.pub-category-title');
+        const emptyState = document.querySelector('.pub-empty-state');
+        if (!chips.length || !items.length) return;
+
+        // Populate chip counts
+        const counts = { all: items.length, nlp: 0, cv: 0, eo: 0, ai4science: 0 };
+        items.forEach(it => {
+          const cats = (it.getAttribute('data-cats') || '').split(/\s+/);
+          cats.forEach(c => { if (c in counts) counts[c]++; });
+        });
+        chips.forEach(chip => {
+          const f = chip.getAttribute('data-filter');
+          const cnt = chip.querySelector('.chip-count');
+          if (cnt && counts[f] !== undefined) cnt.textContent = counts[f];
+        });
+
+        function apply(filter) {
+          let visibleCount = 0;
+          items.forEach(it => {
+            const cats = it.getAttribute('data-cats') || '';
+            const show = filter === 'all' || cats.split(/\s+/).includes(filter);
+            it.classList.toggle('filter-hidden', !show);
+            if (show) visibleCount++;
+          });
+          // Update category section visibility hints
+          catTitles.forEach(title => {
+            let next = title.nextElementSibling;
+            if (!next) return;
+            const visibleInCat = next.querySelectorAll('.pub-item:not(.filter-hidden)').length;
+            title.classList.toggle('cat-empty', visibleInCat === 0);
+            // Hide the <ol> entirely if empty to avoid dangling titles
+            next.style.display = visibleInCat === 0 ? 'none' : '';
+            title.style.display = visibleInCat === 0 ? 'none' : '';
+          });
+          if (emptyState) emptyState.classList.toggle('visible', visibleCount === 0);
+        }
+
+        chips.forEach(chip => {
+          chip.addEventListener('click', () => {
+            chips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            apply(chip.getAttribute('data-filter'));
+          });
+        });
       })();
 
       /* ————————————— Back to top ————————————— */
