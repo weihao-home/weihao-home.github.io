@@ -269,6 +269,7 @@
         font-size: 12px;
       }
 
+      /* Collaborators feature — commented out
       #collaboratorsLink {
         cursor: pointer;
         color: var(--text-primary);
@@ -312,6 +313,7 @@
         border-bottom: 1px solid var(--border);
       }
       .coauthor-item em { color: var(--text-muted); font-style: italic; }
+      */
 
       /* ——————————————————————— Nav ——————————————————————— */
 
@@ -910,13 +912,14 @@
                 I'm a Ph.D. candidate at <a href="https://www.ms.k.u-tokyo.ac.jp/members.html">Machine Learning and Statistical Data Analysis Lab (杉山・横矢・石田研究室)</a>, <a href="https://www.u-tokyo.ac.jp/">The University of Tokyo (東京大学)</a>, where I'm very fortunate to be advised by Prof. <a href="https://naotoyokoya.com/">Naoto Yokoya</a>. I'm also under the Junior Research Associate (JRA) program at <a href="https://www.riken.jp/">RIKEN</a> <a href="https://aip.riken.jp/?lang=en">Center for Advanced Intelligence Project</a>.
               </p>
               <p>
-                My research builds <b>reliable multimodal AI systems</b>: models that know what they know, and that generalize from the lab to the world. On the foundations side, I study the reliability of <b>large language models, vision-language models, and increasingly, agentic systems</b>: their calibration, hallucinations, reasoning under uncertainty, and multilingual behavior. On the applications side, I use these models to understand the physical world at scale. Most of my fieldwork is in <b>Earth observation</b>, with active collaborations in <b>AI for Science</b> across medicine, biomedicine, and biology. I work with <a href="#" id="collaboratorsLink">amazing collaborators<i class="fas fa-users"></i></a>.
+                My research builds <b>reliable multimodal AI systems</b>: models that know what they know, and that generalize from the lab to the world. On the foundations side, I study the reliability of <b>large language models, vision-language models, and increasingly, agentic systems</b>: their calibration, hallucinations, reasoning under uncertainty, and multilingual behavior. On the applications side, I use these models to understand the physical world at scale. Most of my fieldwork is in <b>earth observation</b>, with active collaborations in <b>AI for Science</b> across medicine, biomedicine, and biology.<!-- I work with <a href="#" id="collaboratorsLink">amazing collaborators<i class="fas fa-users"></i></a>. -->
               </p>
               <p class="contact-callout">
                 <i class="fas fa-envelope"></i>If you are interested in working with me or joining our lab, feel free to <a href="/cdn-cgi/l/email-protection#7a0d1f13121b15020f1b143a1d541f1919540f570e15110315541b1954100a">reach out via email</a>.
               </p>
             </div>
 
+<!--
             <div id="hiddenCollaborators">
               <div class="coauthors-label">Regular Collaborators</div>
               <div class="coauthors-content" id="hiddenCoauthorsContainer">
@@ -932,6 +935,8 @@
                 <div class="coauthor-item"><a href="https://scholar.google.com/citations?user=CREpn_AAAAAJ&hl=en">Zhuo Zheng</a>, Stanford University <em>(remote sensing)</em></div>
               </div>
             </div>
+-->
+
           </div>
         </div>
       </div>
@@ -1642,7 +1647,7 @@
         });
       });
 
-      /* ————————————— Collaborators reveal ————————————— */
+      /* ————————————— Collaborators reveal — commented out —————————————
       (function () {
         const link = document.getElementById('collaboratorsLink');
         const panel = document.getElementById('hiddenCollaborators');
@@ -1659,6 +1664,7 @@
           }
         });
       })();
+      */
 
       /* ————————————— GitHub stars ————————————— */
       async function loadGitHubStars() {
