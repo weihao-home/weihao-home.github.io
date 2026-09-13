@@ -24,6 +24,10 @@
         --accent-soft: rgba(139, 37, 0, 0.08);
         --accent-line: rgba(139, 37, 0, 0.22);
         --accent-2: #1f6156;
+        --pub-featured-bg: #eee2d9;
+        --pub-featured-line: #bd8e77;
+        --pub-journal-bg: #e0e8df;
+        --pub-journal-line: #88a18b;
         --border: #e5e2db;
         --border-light: #ece8e0;
         --serif: 'Source Serif Pro', 'Georgia', 'Hiragino Mincho ProN', 'Hiragino Sans GB', 'Microsoft YaHei', serif;
@@ -43,6 +47,10 @@
         --accent-soft: rgba(228, 131, 96, 0.10);
         --accent-line: rgba(228, 131, 96, 0.28);
         --accent-2: #6fbfae;
+        --pub-featured-bg: #30251f;
+        --pub-featured-line: #986e58;
+        --pub-journal-bg: #222e28;
+        --pub-journal-line: #628573;
         --border: #2a2620;
         --border-light: #221f1a;
       }
@@ -608,8 +616,9 @@
       .pub-item:last-child { border-bottom: none; }
 
       .pub-item.featured {
-        padding: 16px 0 16px 18px;
-        border-left: 2px solid var(--accent);
+        padding: 16px 18px;
+        border-left: 2px solid var(--pub-featured-line);
+        background: var(--pub-featured-bg);
       }
 
       .pub-title {
@@ -669,7 +678,10 @@
         border-color: var(--accent);
       }
       html[data-theme="dark"] .pub-item.featured .pub-badge { color: #14120f; }
-      .pub-item.featured.feat-journal { border-left-color: var(--accent-2); }
+      .pub-item.featured.feat-journal {
+        border-left-color: var(--pub-journal-line);
+        background: var(--pub-journal-bg);
+      }
       .pub-item.featured.feat-journal .pub-badge {
         background: var(--accent-2);
         border-color: var(--accent-2);
@@ -1068,9 +1080,18 @@
             <h3 class="pub-category-title">Preprints</h3>
             <ol class="pub-list">
               <li class="pub-item" data-cats="openworld">
+                <span class="pub-title">DenMark: Robust Semantic Watermarking for Diffusion Language Models</span>
+                <span class="pub-authors">Tianhao Ma, <strong>Weihao Xuan</strong>, Dong-Dong Wu, Farshid Nooshi, Takashi Ishida, Gang Niu, Naoto Yokoya, &amp; Masashi Sugiyama</span>
+                <span class="pub-venue">arXiv preprint.</span>
+                <div class="pub-links">
+                  <a href="" onclick="return false;"><i class="fas fa-file-pdf"></i> Paper</a>
+                </div>
+              </li>
+
+              <li class="pub-item" data-cats="openworld">
                 <span class="pub-title">Learning from Use: Test-Time Learning in Large Language Models and Agents</span>
                 <span class="pub-authors"><strong>Weihao Xuan*†</strong>, Qingcheng Zeng*, Jiarui Liu*, Rui Yang*, Yunze Xiao, Yinxi Li, Zeqi Zhou, Weiwei Sun, Heli Qi, Leyang Cui, Tianhao Ma, Hanqun Cao, Tianyu Liu, Junjue Wang, Weihua Du, Yueqi Song, Jiayi Geng, Matthew Yu Heng Wong, Rob Voigt, Chuan Hong, Xiang Yue, Jen-Tse Huang, Xuhai Xu, Yifan Peng, Pheng Ann Heng, Yiming Yang, Bernhard Schölkopf, Zhijing Jin, Nan Liu†, Naoto Yokoya†, &amp; Mona Diab†</span>
-                <span class="pub-venue">Preprint.</span>
+                <span class="pub-venue">SSRN preprint.</span>
                 <div class="pub-links">
                   <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7319678" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1079,7 +1100,7 @@
               <li class="pub-item" data-cats="openworld">
                 <span class="pub-title">Towards an Agentic Era of AI</span>
                 <span class="pub-authors">Tianyu Liu†*, Dingyuan Dai*, <strong>Weihao Xuan*</strong>, Jialin Chen*, Qingcheng Zeng*, Rui Yang*, Ada Fang, Zhen Yang, Peng Cui, Yinpeng Dong, Yuanqi Du, Marinka Zitnik†, James Zou†, &amp; Jie Tang†</span>
-                <span class="pub-venue">Preprint.</span>
+                <span class="pub-venue">SSRN preprint.</span>
                 <div class="pub-links">
                   <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7245280" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1088,7 +1109,7 @@
               <li class="pub-item" data-cats="openworld">
                 <span class="pub-title">Harbor Adapters and Harbor-Index: Infrastructure and a Curated Meta-Dataset for Large-Scale Agentic Evaluation</span>
                 <span class="pub-authors">Lin Shi, Haowei Lin, Zixuan Zhu, Xiaoyue Zhou, Xiang Li, Xiangning Lin, Yaxuan Deng, Han Xu, Yuangang Li, Shanda Li, Zizhao Chen, Hanwen Xing, Harsh Raj, Bo Chen, Quan Shi, Steven Dillmann, Yipeng Gao, Puneesh Khanna, Ruofan Lu, Chao Beyond Zhou, Michael Yang, Robert Zhang, Siyuan Chai, Jiayu Chang, Yizhao Chen, Xiaokun Chen, Yiwei Dai, Wenting Yang, Hange Liu, Minghao Liu, Zihan Wang, Adnan El Assadi, Benedikt Stroebl, E. Kelly Buchanan, Han Meng, Junwei He, Longxuan Yu, Radin Shayanfar, Yukyung Lee, Zhikang Dong, Allen G Hart, Anjiang Wei, Anurag Kashyap, Arpandeep Khatua, Audrey Jixin Zheng, Chengrui Ma, David Heineman, Dubing Chen, Hai-Anh Trinh, Haishuo Fang, Hefan Zhang, Hui Shen, Issa Sugiura, Jiankai Sun, Jiechao Gao, Junhong Lin, Junnan Li, Kai Yang, Lei Hsiung, Maoyu Wang, Mengze Tang, Nabil Omi, Negin Raoof, Nicholas Edwards, Octavia Guo, Orfeas Menis Mastromichalakis, Pengliang Ji, Przemysław Hejman, Qi Qi, Qunshu Lin, Richard Zhuang, Rui Yang, Ruichen Zheng, Ryan Marten, Shaghayegh Fazliani, Shizheng Hou, Sicong Jiang, Sijie Li, Boqin Yuan, Michael Glass, Song Bian, Terry Yue Zhuo, Tianqing Wu, Tom Tang, Wanjia Zhao, <strong>Weihao Xuan</strong>, Wenhua Liang, Xian Liu, Xin Lan, Xuan Zhang, Xuandong Zhao, Yanchuan Tang, Yifan Jiang, Yijiang Li, Yitong Guan, Yizhi Li, Yonghui Liu, Yuheng Tang, Yujun Mao, Yunfei Zhao, Yuxin Wang, Yuxuan Tang, Zhenheng Tang, Zhifei Li, Ziruo Wang, Ziyu She, Kaiyuan Liu, Iheb Chaabane, Yuxin Tang, Xiangyi Li, Satya Sai Srinath Namburi GNVV, Xinyue Zheng, Andy Konwinski, Boxuan Li, Leon Liangyu Chen, Alex Dimakis, Nicholas Carlini, Soroush Vosoughi, Sanmi Koyejo, Di He, Etash Guha, Benjamin Feuer, Mike Merrill, Ludwig Schmidt, &amp; Alex Shaw</span>
-                <span class="pub-venue">arXiv preprint arXiv:2609.04298.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2609.04298" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1097,7 +1118,7 @@
               <li class="pub-item" data-cats="openworld systems">
                 <span class="pub-title">Evaluating Multi-Turn Multimodal Diagnostic Reasoning on Challenging Real-World Clinical Cases</span>
                 <span class="pub-authors">Rui Yang, <strong>Weihao Xuan</strong>, Yi Lin, Zhuhan Bao, Jonathan Chong Kai Liew, Matthew Yu Heng Wong, Nicolás Lescano, Nikita R. Paripati, Emily Ling-Lin Pai, Jiarui Liu, Heli Qi, Heng-Jui Chang, Benny Kai Guo Loo, Huitao Li, Kunyu Yu, Yufan Wang, Chuan Hong, Shijian Lu, Douglas Teodoro, Naoto Yokoya, Ross Koppel, Mona Diab, Hua Xu, David W. Bates, Nan Liu, &amp; Yifan Peng</span>
-                <span class="pub-venue">arXiv preprint arXiv:2607.25933.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2607.25933" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1106,7 +1127,7 @@
               <li class="pub-item" data-cats="earth">
                 <span class="pub-title">Advancing All-Weather Building Damage Mapping to the Instance Level: Outcomes and Insights from the 2026 Bright Challenge</span>
                 <span class="pub-authors">Hongruixuan Chen, He Huang, Haifeng Wang, Jian Song, Junjue Wang, <strong>Weihao Xuan</strong>, Hamish Mitchell, Jiepan Li, Wei He, Liangpei Zhang, Zijie Wang, Chen Zhong, Jiazhen Zhao, Lei Hu, Ting Hu, Hongyan Zhang, Gregory Angelides, Miriam Cha, Clifford Broni-Bediako, Junshi Xia, Taylor Perron, &amp; Naoto Yokoya</span>
-                <span class="pub-venue">arXiv preprint arXiv:2607.22746.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2607.22746" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1115,7 +1136,7 @@
               <li class="pub-item" data-cats="openworld">
                 <span class="pub-title">MindEdit-Bench: Benchmarking Object-Level Counterfactual Spatial Reasoning in VLMs from In-the-Wild Photos</span>
                 <span class="pub-authors">Leyuan Yu*, Xiao Tang*, Minghao Liu*, Xinyuan Li, Xiaokai Bai, Sheng Zhou, Qunshu Lin†, <strong>Weihao Xuan</strong>, &amp; Naoto Yokoya</span>
-                <span class="pub-venue">arXiv preprint arXiv:2607.00491.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2607.00491" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1124,7 +1145,7 @@
               <li class="pub-item" data-cats="openworld">
                 <span class="pub-title">Beyond Monolingual Deep Research: Evaluating Agents and Retrievers with Cross-Lingual BrowseComp-Plus</span>
                 <span class="pub-authors">Yuheng Lu*, Qingcheng Zeng*, Heli Qi, Puxuan Yu, Fuheng Zhao, Rui Yang, Hitomi Yanaka, Naoto Yokoya, &amp; <strong>Weihao Xuan†</strong></span>
-                <span class="pub-venue">arXiv preprint arXiv:2606.15345.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2606.15345" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1133,7 +1154,7 @@
               <li class="pub-item" data-cats="openworld">
                 <span class="pub-title">Every Act Has Its Price: Compressed Moral Composition in Frontier LLMs</span>
                 <span class="pub-authors">Weijia Zhang*, Ruiqi Chen*, Yunze Xiao*†, &amp; <strong>Weihao Xuan†</strong></span>
-                <span class="pub-venue">arXiv preprint arXiv:2606.11232.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2606.11232" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1142,7 +1163,7 @@
               <li class="pub-item" data-cats="openworld">
                 <span class="pub-title">Knowledge Index of Noah's Ark</span>
                 <span class="pub-authors">Sheng Jin*, Minghao Liu*†, Yunze Xiao, Zeqi Zhou, Heli Qi, Yifan Yao, Meishu Song, Kaijing Ma, Xuan Zhang, Sicong Jiang, Yizhe Li, Ningshan Ma, Jie Wei, Ziniu Li, Minglai Yang, Bangya Liu, Yiming Liang, Xiao Fang, Qingcheng Zeng, Jiarui Liu, Rui Yang, Shen Yan, Wenhao Huang, Jiaheng Liu, Zihan Wang, <strong>Weihao Xuan†</strong>, &amp; Ge Zhang†</span>
-                <span class="pub-venue">Preprint.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2606.05104" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1151,7 +1172,7 @@
               <li class="pub-item" data-cats="earth">
                 <span class="pub-title">Deep Learning for Hyperspectral Video Object Tracking</span>
                 <span class="pub-authors">Yuzeng Chen, Qiangqiang Yuan, Naoto Yokoya, Junjue Wang, <strong>Weihao Xuan</strong>, Hongruixuan Chen, Zhuo Zheng, Zhuohong Li, Yuqi Tang, Min Chen, Jun Zhou, &amp; Liangpei Zhang</span>
-                <span class="pub-venue">Preprint.</span>
+                <span class="pub-venue">SSRN preprint.</span>
                 <div class="pub-links">
                   <a href="https://ssrn.com/abstract=6802779" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1160,7 +1181,7 @@
               <li class="pub-item" data-cats="openworld">
                 <span class="pub-title">MixSD: Mixed Contextual Self-Distillation for Knowledge Injection</span>
                 <span class="pub-authors">Jiarui Liu, Lechen Zhang, Yongjin Yang, Yinghui He, Yingheng Wang, <strong>Weihao Xuan</strong>, Zhijing Jin, &amp; Mona Diab</span>
-                <span class="pub-venue">arXiv preprint arXiv:2605.16865.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2605.16865" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1169,7 +1190,7 @@
               <li class="pub-item" data-cats="openworld earth">
                 <span class="pub-title">Can LLM Agents Respond to Disasters? Benchmarking Heterogeneous Geospatial Reasoning in Emergency Operations</span>
                 <span class="pub-authors">Junjue Wang*, <strong>Weihao Xuan*</strong>, Heli Qi, Pengyu Dai, Kunyi Liu, Hongruixuan Chen, Zhuo Zheng, Junshi Xia, Stefano Ermon, &amp; Naoto Yokoya†</span>
-                <span class="pub-venue">arXiv preprint arXiv:2605.11633.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2605.11633" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1178,7 +1199,7 @@
               <li class="pub-item" data-cats="earth">
                 <span class="pub-title">Earth Observation for Disaster Mapping: Benchmarks, Methods, Challenges and Future Perspectives</span>
                 <span class="pub-authors">Hongruixuan Chen*, Jian Song*, <strong>Weihao Xuan*</strong>, Junjue Wang*, Heli Qi, Zeqi Zhou, Pengyu Dai, Olivier Dietrich, Erika Gutierrez, Lars Bromly, Edoardo Nemni, Yafei Ou, Jie Zhao, Zhuo Zheng, Yonghao Xu, Ronny Hänsch, Wenzhe Jiao, Marco Chini, Claudio Persello, Junshi Xia, Shijian Lu, Lixin Wang, Zhe Zhu, Evan Shelhamer, Jocelyn Chanussot, Konrad Schindler, &amp; Naoto Yokoya†</span>
-                <span class="pub-venue">Preprint.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://chrx97.com/Files/EO4DisasterMapping.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                   <a href="https://github.com/ChenHongruixuan/AnyDisasterMapping" target="_blank"><i class="fab fa-github"></i> Code <span class="github-stats" data-repo="ChenHongruixuan/AnyDisasterMapping">★ ...</span></a>
@@ -1188,7 +1209,7 @@
               <li class="pub-item" data-cats="openworld systems">
                 <span class="pub-title">A Versatile AI Agent for Rare Disease Diagnosis and Risk Gene Prioritization</span>
                 <span class="pub-authors">Tianyu Liu, Wangjie Zheng, Rui Yang, Benny Kai Guo Loo, Hui Zhang, Jeffries Lauran, Jianlei Gu, Botao Yu, <strong>Weihao Xuan</strong>, Kexin Huang, Nan Liu, James Zou, Yonghui Jiang, Hua Xu, &amp; Hongyu Zhao</span>
-                <span class="pub-venue">arXiv preprint arXiv:2605.06226.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2605.06226" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1197,7 +1218,7 @@
               <li class="pub-item" data-cats="openworld">
                 <span class="pub-title">The Chameleon's Limit: Investigating Persona Collapse and Homogenization in Large Language Models</span>
                 <span class="pub-authors">Yunze Xiao*, Vivienne J. Zhang*, Chenghao Yang, Ningshan Ma, <strong>Weihao Xuan</strong>, &amp; Jen-tse Huang†</span>
-                <span class="pub-venue">arXiv preprint arXiv:2604.24698.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2604.24698" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1206,7 +1227,7 @@
               <li class="pub-item" data-cats="openworld systems">
                 <span class="pub-title">Say Something Else: Rethinking Contextual Privacy as Information Sufficiency</span>
                 <span class="pub-authors">Yunze Xiao*, Wenkai Li*, Xiaoyuan Wu, Ningshan Ma, Yueqi Song, &amp; <strong>Weihao Xuan†</strong></span>
-                <span class="pub-venue">arXiv preprint arXiv:2604.06409.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2604.06409" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1215,7 +1236,7 @@
               <li class="pub-item" data-cats="openworld earth">
                 <span class="pub-title">OpenEarth-Agent: From Tool Calling to Tool Creation for Open-Environment Earth Observation</span>
                 <span class="pub-authors">Sijie Zhao, Feng Liu, Xueliang Zhang, Hao Chen, Xinyu Gu, Zhe Jiang, Fenghua Ling, Ben Fei, Wenlong Zhang, Junjue Wang, <strong>Weihao Xuan</strong>, Pengfeng Xiao, Naoto Yokoya, &amp; Lei Bai</span>
-                <span class="pub-venue">arXiv preprint arXiv:2603.22148.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2603.22148" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                   <a href="https://github.com/walking-shadow/OpenEarth-Agent" target="_blank"><i class="fab fa-github"></i> Code</a>
@@ -1225,7 +1246,7 @@
               <li class="pub-item" data-cats="openworld earth">
                 <span class="pub-title">Experience-Driven Multi-Agent Systems Are Training-free Context-aware Earth Observers</span>
                 <span class="pub-authors">Pengyu Dai, <strong>Weihao Xuan</strong>, Junjue Wang, Hongruixuan Chen, Jian Song, Yafei Ou, &amp; Naoto Yokoya</span>
-                <span class="pub-venue">arXiv preprint arXiv:2602.02559.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2602.02559" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1234,7 +1255,7 @@
               <li class="pub-item" data-cats="openworld systems">
                 <span class="pub-title">Towards Valid Student Simulation with Large Language Models</span>
                 <span class="pub-authors">Zhihao Yuan*, Yunze Xiao*, Ming Li*, <strong>Weihao Xuan</strong>, Richard Jiarui Tong, Mona Diab, &amp; Tom Mitchell†</span>
-                <span class="pub-venue">arXiv preprint arXiv:2601.05473.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2601.05473" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1243,7 +1264,7 @@
               <li class="pub-item" data-cats="openworld systems">
                 <span class="pub-title">Toward Global Large Language Models in Medicine</span>
                 <span class="pub-authors">Rui Yang, Huitao Li, <strong>Weihao Xuan†</strong>, Heli Qi, Xin Li, Kunyu Yu, Yingjian Chen, Rongrong Wang, Jacques Behmoaras, Tianxi Cai, Bibhas Chakraborty, Qingyu Chen, Lionel Tim-Ee Cheng, Marie-Louise Damwanza, Chido Dzinotyiwei, Aosong Feng, Chuan Hong, Yusuke Iwasawa, Yuhe Ke, Linah Kitala, Taehoon Ko, Jisan Lee, Irene Li, Jonathan Chong Kai Liew, Hongfang Liu, Lian Leng Low, Edison Marrese-Taylor, Yutaka Matsuo, Isheanesu Misi, Yilin Ning, Jasmine Chiat Ling Ong, Marcus Eng Hock Ong, Enrico Petretto, Hossein Rouhizadeh, Abiram Sandralegar, Oren Schreier, Iain Bee Huat Tan, Patrick Tan, Daniel Shu Wei Ting, Junjue Wang, Chunhua Weng, Matthew Yu Heng Wong, Fang Wu, Yunze Xiao, Xuhai Xu, Qingcheng Zeng, Zhuo Zheng, Yifan Peng†, Douglas Teodoro†, &amp; Nan Liu†</span>
-                <span class="pub-venue">arXiv preprint arXiv:2601.02186. (under review)</span>
+                <span class="pub-venue">arXiv preprint. (under review)</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2601.02186" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1253,7 +1274,7 @@
                 <span class="pub-badge-hf"><i class="fas fa-fire"></i> HF Daily Top 3 · 2025.07.22</span>
                 <span class="pub-title">The Invisible Leash: Why RLVR May Not Escape Its Origin</span>
                 <span class="pub-authors">Fang Wu*, <strong>Weihao Xuan*</strong>, Ximing Lu, Zaid Harchaoui, &amp; Yejin Choi†</span>
-                <span class="pub-venue">arXiv preprint arXiv:2507.14843 (also in ICML 2025 AI4MATH Workshop).</span>
+                <span class="pub-venue">arXiv preprint. (also in ICML 2025 AI4MATH Workshop).</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2507.14843" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -1263,7 +1284,7 @@
                 <span class="pub-badge-hf"><i class="fas fa-fire"></i> HF Daily Top 2 · 2025.08.07</span>
                 <span class="pub-title">VeriWeb: Verifiable Long-Chain Web Benchmark for Agentic Information-Seeking</span>
                 <span class="pub-authors">Shunyu Liu, Minghao Liu, Huichi Zhou, Zhenyu Cui, Yang Zhou, Yuhao Zhou, Jialiang Gao, Heng Zhou, Yunhao Yang, Wendong Fan, Puzhen Zhang, Ge Zhang, Jiajun Shi, <strong>Weihao Xuan</strong>, Jiaxing Huang, Shuang Luo, Fang Wu, Heli Qi, Qingcheng Zeng, Junjie Wang, Aosong Feng, Jindi Lv, Sicong Jiang, Ziqi Ren, Wangchunshu Zhou, Zhenfei Yin, Wenlong Zhang, Guohao Li, Wenhao Yu, Lei Ma, Lei Bai, Qunshu Lin, Mingli Song, Dacheng Tao</span>
-                <span class="pub-venue">arXiv preprint arXiv:2508.04026.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2508.04026" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                   <a href="https://huggingface.co/datasets/2077AIDataFoundation/VeriGUI" target="_blank"><i class="fas fa-database"></i> Dataset <span class="hf-stats" data-dataset="2077AIDataFoundation/VeriGUI"><i class="fas fa-download"></i> ...</span></a>
@@ -1274,7 +1295,7 @@
               <li class="pub-item" data-cats="openworld">
                 <span class="pub-title">PIN: A Knowledge-Intensive Dataset for Paired and Interleaved Multimodal Documents</span>
                 <span class="pub-authors">Junjie Wang†, Yuxiang Zhang, Minghao Liu, Yin Zhang, Yatai Ji, <strong>Weihao Xuan</strong>, Nie Lin, Kang Zhu, Zhiqiang Lin, Yiming Ren, Chunyang Jiang, Yiyao Yu, Zekun Wang, Tiezhen Wang, Wenhao Huang, Jie Fu, Qunshu Liu, Yujiu Yang, Ge Zhang, Ruibin Yuan†, Bei Chen†, &amp; Wenhu Chen†</span>
-                <span class="pub-venue">arXiv preprint arXiv:2406.13923.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2406.13923" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                   <a href="https://huggingface.co/datasets/m-a-p/PIN-14M" target="_blank"><i class="fas fa-database"></i> Dataset (14M) <span class="hf-stats" data-dataset="m-a-p/PIN-14M"><i class="fas fa-download"></i> ...</span></a>
@@ -1286,7 +1307,7 @@
                 <span class="pub-badge-hf"><i class="fas fa-fire"></i> HF Daily Top 3 · 2024.08.20</span>
                 <span class="pub-title">Segment Anything With Multiple Modalities</span>
                 <span class="pub-authors">Aoran Xiao*, <strong>Weihao Xuan*</strong>, Heli Qi, Yun Xing, Naoto Yokoya†, &amp; Shijian Lu†</span>
-                <span class="pub-venue">arXiv preprint arXiv:2408.09085.</span>
+                <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2408.09085" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                   <a href="https://github.com/weihao1115/mm-sam" target="_blank"><i class="fab fa-github"></i> Code <span class="github-stats" data-repo="weihao1115/mm-sam">★ ...</span></a>
