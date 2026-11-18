@@ -312,52 +312,6 @@
         font-size: 12px;
       }
 
-      /* Collaborators feature — commented out
-      #collaboratorsLink {
-        cursor: pointer;
-        color: var(--text-primary);
-        border-bottom: 1px dashed var(--accent-line);
-      }
-      #collaboratorsLink:hover { color: var(--accent); border-bottom-color: var(--accent); }
-      #collaboratorsLink i { margin-left: 3px; font-size: 0.78em; opacity: 0.65; }
-
-      #hiddenCollaborators {
-        margin-top: 22px;
-        padding: 20px 22px;
-        border: 1px solid var(--border);
-        background: var(--bg-alt);
-        display: none;
-        opacity: 0;
-        transition: opacity .3s ease;
-      }
-      .coauthors-label {
-        font-family: var(--mono);
-        font-size: 10px;
-        letter-spacing: 1.8px;
-        color: var(--text-muted);
-        text-transform: uppercase;
-        margin-bottom: 14px;
-        display: flex; align-items: center; gap: 8px;
-      }
-      .coauthors-label::after {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: var(--border);
-      }
-      .coauthor-item {
-        font-size: 13px;
-        line-height: 1.75;
-        color: var(--text-secondary);
-      }
-      .coauthor-item a {
-        color: var(--text-primary);
-        font-weight: 600;
-        border-bottom: 1px solid var(--border);
-      }
-      .coauthor-item em { color: var(--text-muted); font-style: italic; }
-      */
-
       /* ——————————————————————— Nav ——————————————————————— */
 
       nav {
@@ -966,10 +920,13 @@
 
             <div class="profile-bio">
               <p>
-                I'm a final-year Ph.D. candidate at <a href="https://www.ms.k.u-tokyo.ac.jp/members.html">Machine Learning and Statistical Data Analysis Lab (杉山・横矢・石田研究室)</a>, <a href="https://www.u-tokyo.ac.jp/">The University of Tokyo (東京大学)</a>, where I'm very fortunate to be advised by Prof. <a href="https://naotoyokoya.com/">Naoto Yokoya</a>. I'm also under the Junior Research Associate (JRA) program at <a href="https://www.riken.jp/">RIKEN</a> <a href="https://aip.riken.jp/?lang=en">Center for Advanced Intelligence Project</a>. Outside academia, I'm a co-founder, advisor, and consultant for several AI-driven companies in Japan, Singapore, and the United States.
+                I'm a final-year Ph.D. candidate at <a href="https://www.ms.k.u-tokyo.ac.jp/members.html">Machine Learning and Statistical Data Analysis Lab (杉山・横矢・石田研究室)</a>, <a href="https://www.u-tokyo.ac.jp/">The University of Tokyo (東京大学)</a>, where I'm very fortunate to be advised by Prof. <a href="https://naotoyokoya.com/">Naoto Yokoya</a>. I'm also under the Junior Research Associate (JRA) program at <a href="https://www.riken.jp/">RIKEN</a> <a href="https://aip.riken.jp/?lang=en">Center for Advanced Intelligence Project</a>.
               </p>
               <p>
-                My research focuses on <b>building and evaluating AI agents that do research</b>, in AI itself and across the sciences.<!-- I work with <a href="#" id="collaboratorsLink">amazing collaborators<i class="fas fa-users"></i></a>. -->
+                Outside academia, I work closely with several AI-driven companies in Japan, Singapore, and the United States on their founding, research, and technical strategy.
+              </p>
+              <p>
+                My research focuses on <b>building and evaluating AI agents that do research</b>, in AI itself and across the sciences.
               </p>
               <ul class="research-pillars">
                 <li><a class="pillar-label" href="#publications" data-filter-target="ai4ai">AI for AI</a> — automating AI research and development with agents, toward systems that can improve themselves.</li>
@@ -979,24 +936,6 @@
                 <i class="fas fa-envelope"></i>If you are interested in working with me or joining our lab, feel free to <a href="mailto:weihaoxuan@g.ecc.u-tokyo.ac.jp">reach out via email</a>.
               </p>
             </div>
-
-<!--
-            <div id="hiddenCollaborators">
-              <div class="coauthors-label">Regular Collaborators</div>
-              <div class="coauthors-content" id="hiddenCoauthorsContainer">
-                <div class="coauthor-item"><a href="https://scholar.google.co.jp/citations?user=CH-rTXsAAAAJ&hl=en">Heli Qi</a>, RIKEN AIP &amp; Waseda University <em>(<strong>everything</strong>)</em></div>
-                <div class="coauthor-item"><a href="https://scholar.google.com.hk/citations?user=H58gKSAAAAAJ&hl=en">Junjue Wang</a>, The University of Tokyo <em>(remote sensing)</em></div>
-                <div class="coauthor-item"><a href="https://scholar.google.com/citations?user=8vHkc5YAAAAJ&hl=en">Fang Wu</a>, Stanford University <em>(natural language processing &amp; AI for Science)</em></div>
-                <div class="coauthor-item"><a href="https://scholar.google.com/citations?user=i0K71KQAAAAJ&hl">Qingcheng Zeng</a>, Northwestern University <em>(natural language processing)</em></div>
-                <div class="coauthor-item"><a href="https://scholar.google.com/citations?user=95n7XTkAAAAJ&hl=en">Lorenzo Xiao</a>, Carnegie Mellon University <em>(natural language processing: persona)</em></div>
-                <div class="coauthor-item"><a href="https://scholar.google.com/citations?user=aCawmg0AAAAJ&hl=enn">Rui Yang</a>, Duke-NUS Medical School <em>(natural language processing: medical LLMs)</em></div>
-                <div class="coauthor-item"><a href="https://scholar.google.com.hk/citations?user=XOk4Cf0AAAAJ&hl=en">Hongruixuan Chen</a>, The University of Tokyo &amp; RIKEN AIP <em>(remote sensing: disaster response)</em></div>
-                <div class="coauthor-item"><a href="https://scholar.google.com.hk/citations?user=3SNYa0EAAAAJ&hl=en">Zhihao Liu</a>, The University of Tokyo &amp; RIKEN AIP <em>(computer graphics: plant modeling)</em></div>
-                <div class="coauthor-item"><a href="https://scholar.google.com.hk/citations?user=CgcMFJsAAAAJ&hl=en">Jian Song</a>, The University of Tokyo &amp; RIKEN AIP <em>(remote sensing: 3D reconstruction)</em></div>
-                <div class="coauthor-item"><a href="https://scholar.google.com/citations?user=CREpn_AAAAAJ&hl=en">Zhuo Zheng</a>, Stanford University <em>(remote sensing)</em></div>
-              </div>
-            </div>
--->
 
           </div>
         </div>
@@ -1097,6 +1036,15 @@
                 <span class="pub-venue">arXiv preprint.</span>
                 <div class="pub-links">
                   <a href="https://arxiv.org/pdf/2609.39903" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                </div>
+              </li>
+
+              <li class="pub-item" data-cats="ai4ai">
+                <span class="pub-title">SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations</span>
+                <span class="pub-authors">Xinping Lei, Minghao Liu, Ruijie Zhu, Xiaohui Hu, Xingqiao Li, Ao Zhang, Wenhao Chai, Han Li, Tao Wang, Jingyuan Zhang, Enduo Zhao, Yunfeng Shi, Yiming Liang, Zetao Yang, Xingjian Wang, Yifan Yao, Xinkai Ma, Yingru Li, Tianhan Yang, Huan Zhou, Weiran Shi, Shen Yan, Jiaheng Liu†, Stephen Huang†, Eli Cheung†, &amp; <strong>Weihao Xuan†</strong></span>
+                <span class="pub-venue">arXiv preprint.</span>
+                <div class="pub-links">
+                  <a href="https://arxiv.org/pdf/2611.20218" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
               </li>
 
@@ -1980,25 +1928,6 @@
           if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         });
       });
-
-      /* ————————————— Collaborators reveal — commented out —————————————
-      (function () {
-        const link = document.getElementById('collaboratorsLink');
-        const panel = document.getElementById('hiddenCollaborators');
-        if (!link || !panel) return;
-        link.addEventListener('click', e => {
-          e.preventDefault();
-          const visible = panel.style.display === 'block';
-          if (visible) {
-            panel.style.opacity = '0';
-            setTimeout(() => { panel.style.display = 'none'; }, 300);
-          } else {
-            panel.style.display = 'block';
-            requestAnimationFrame(() => { panel.style.opacity = '1'; });
-          }
-        });
-      })();
-      */
 
       /* ————————————— GitHub stars ————————————— */
       async function loadGitHubStars() {
